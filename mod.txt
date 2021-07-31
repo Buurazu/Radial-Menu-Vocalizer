@@ -6,7 +6,7 @@
 	Some code from Dr_Newbie's Multi-Arrow mod
 	SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Buurazu#8042"
-	"version" : "0.9"
+	"version" : "1.0"
 	"blt_version" : 2,
 	"image" : "rmm_icon.png",
 	"updates": [{
