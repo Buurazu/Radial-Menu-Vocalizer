@@ -1,11 +1,20 @@
 {
-	"name" : "Buurazu's Vocalizer"
+	"name" : "Radial Menu Vocalizer"
 	"description" : "Adds Radial Mouse Menus for vocalizing"
-	"author" : "Vocal choices by Buurazu, radial mouse menus by offyerrocker, some code from Dr_Newbie's Multi-Arrow mod"
+	"author" : "Buurazu
+	Base Radial Menu code by offyerrocker
+	Some code from Dr_Newbie's Multi-Arrow mod
+	SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Buurazu#8042"
-	"version" : "1.0"
+	"version" : "0.9"
 	"blt_version" : 2,
 	"image" : "rmm_icon.png",
+	"updates": [{
+		"identifier": "radial-menu-vocalizer",
+		"host": {
+			"meta": "https://raw.githubusercontent.com/Buurazu/Radial-Menu-Vocalizer/main/meta.json"
+		}
+	}],
 	"persist_scripts" : [
 		{ "global" : "VoiceCommandsMod", "script_path" : "common.lua" }
 	],
@@ -139,7 +148,7 @@
 	{
             "keybind_id" : "SFX: Thermal Drill",
             "name" : "SFX: Thermal Drill",
-            "description" : "Go get it"
+            "description" : "Go get it (only works on Bank Heist)"
             "script_path" : "SFX/ThermalDrill.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -148,7 +157,7 @@
 	{
 	    "keybind_id" : "SFX: Bile Death",
             "name" : "SFX: Bile Death",
-            "description" : "Kreygasm"
+            "description" : "Kreygasm (only works on levels with Bile)"
             "script_path" : "SFX/BileDeath.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -166,7 +175,7 @@
 	{
 	    "keybind_id" : "SFX: Follow Me",
             "name" : "SFX: Follow Me",
-            "description" : "Seems useful"
+            "description" : "Maybe if you spam it, they'll actually follow you"
             "script_path" : "SFX/FollowMe.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
