@@ -1,0 +1,188 @@
+{
+	"name" : "Buurazu's Vocalizer"
+	"description" : "Adds Radial Mouse Menus for vocalizing"
+	"author" : "Vocal choices by Buurazu, radial mouse menus by offyerrocker, some code from Dr_Newbie's Multi-Arrow mod"
+	"contact" : "Buurazu#8042"
+	"version" : "1.0"
+	"blt_version" : 2,
+	"image" : "rmm_icon.png",
+	"persist_scripts" : [
+		{ "global" : "VoiceCommandsMod", "script_path" : "common.lua" }
+	],
+	"hooks" : [
+		{
+			"hook_id" : "lib/managers/menumanager",
+			"script_path" : "offyerrocker/menumanager.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playerstandard",
+			"script_path" : "offyerrocker/playerstandard.lua"
+		},
+		{
+			"hook_id" : "lib/units/beings/player/states/playermaskoff",
+			"script_path" : "offyerrocker/playermaskoff.lua"
+		},
+		{
+			"hook_id" : "lib/units/cameras/fpcameraplayerbase",
+			"script_path" : "offyerrocker/fpcameraplayerbase.lua"
+		}
+	],
+	"keybinds" : [
+	{
+            "keybind_id" : "Radial Menu: Greetings",
+            "name" : "Radial Menu: Greetings",
+            "description" : "Default: Hello, Includes: This is a robbery, this is the place, where's the manager, it's payday"
+            "script_path" : "RadialMenus/Greetings.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Callouts",
+            "name" : "Radial Menu: Callouts",
+            "description" : "Default: Need a Medic Bag, Includes: Found Keycard/Crowbar, Placed First Aid Kit, Sniper!, Bulldozer!"
+            "script_path" : "RadialMenus/Callouts.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Swearing",
+            "name" : "Radial Menu: Swearing",
+            "description" : "Default: Taxman Interrogation, Includes: Fuck, shit, skydiving, fuck that was loud"
+            "script_path" : "RadialMenus/Swearing.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Directions",
+            "name" : "Radial Menu: Directions",
+            "description" : "Default: Inspire Move, Includes: Time to Go, Hurry, Up/Down/Left/Right"
+            "script_path" : "RadialMenus/Directions.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Bain: MOVE!",
+            "name" : "Radial Menu: Bain: MOVE!",
+            "description" : "Default: MOVE MOVE MOVE!, Includes: Clock's ticking, point of no return, escape's here"
+            "script_path" : "RadialMenus/BainMove.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Bain: Yes!",
+            "name" : "Radial Menu: Bain: Yes!",
+            "description" : "Default: YES!, Includes: "
+            "script_path" : "RadialMenus/BainYes.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Bain: No!",
+            "name" : "Radial Menu: Bain: No!",
+            "description" : "Default: NO!, Includes: That's the alarm, weathered assault, killed a lot of civilians"
+            "script_path" : "RadialMenus/BainNo.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Bain: Pagers",
+            "name" : "Radial Menu: Bain: Pagers",
+            "description" : "Default: Pick up the pager, Includes: That's one through four, two more, one more, no more pagers"
+            "script_path" : "RadialMenus/BainPagers.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Specials Entrance",
+            "name" : "Radial Menu: Specials Entrance",
+            "description" : "Default: Captain, Includes: Bulldozer, Medic, Turret, Taser, Cloaker"
+            "script_path" : "RadialMenus/SpecialsEntrance.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Specials Actions",
+            "name" : "Radial Menu: Specials Actions",
+            "description" : "Default: Cloaker Chase, Includes: Various Special Taunts, Cloaker SFX"
+            "script_path" : "RadialMenus/SpecialsActions.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Megaphone Cop",
+            "name" : "Radial Menu: Megaphone Cop",
+            "description" : "This seemed like a good idea but he's too quiet"
+            "script_path" : "RadialMenus/MegaphoneCop.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Music",
+            "name" : "Radial Menu: Music",
+            "description" : "Default: I Will Give You My All"
+            "script_path" : "RadialMenus/Music.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "SFX: Thermal Drill",
+            "name" : "SFX: Thermal Drill",
+            "description" : "Go get it"
+            "script_path" : "SFX/ThermalDrill.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+	    "keybind_id" : "SFX: Bile Death",
+            "name" : "SFX: Bile Death",
+            "description" : "Kreygasm"
+            "script_path" : "SFX/BileDeath.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+	},
+	{
+	    "keybind_id" : "SFX: Time To Go",
+            "name" : "SFX: Time To Go",
+            "description" : "Because it's good to spam it when it's time to go"
+            "script_path" : "SFX/TimeToGo.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+	},
+	{
+	    "keybind_id" : "SFX: Follow Me",
+            "name" : "SFX: Follow Me",
+            "description" : "Seems useful"
+            "script_path" : "SFX/FollowMe.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+	},
+	{
+	    "keybind_id" : "Stop All Sounds",
+            "name" : "Stop All Sounds",
+            "description" : "Good for stopping music"
+            "script_path" : "SFX/StopAllMusic.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+	}		
+    ]
+}
+	
+	
+	
