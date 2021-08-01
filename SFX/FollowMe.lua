@@ -1,1 +1,0 @@
-managers.player:local_player():sound():say("f38_any",true,true)
