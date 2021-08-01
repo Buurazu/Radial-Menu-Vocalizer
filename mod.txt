@@ -41,7 +41,7 @@
 	{
             "keybind_id" : "Radial Menu: Greetings",
             "name" : "Radial Menu: Greetings",
-            "description" : "Default: Hello, Includes: This is a robbery, this is the place, where's the manager, it's payday"
+            "description" : "Default: Hello, Includes: This is a robbery, what a stench, this is the place, search the place"
             "script_path" : "RadialMenus/Greetings.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -59,7 +59,7 @@
 	{
             "keybind_id" : "Radial Menu: Swearing",
             "name" : "Radial Menu: Swearing",
-            "description" : "Default: Taxman Interrogation, Includes: Fuck, shit, skydiving, fuck that was loud"
+            "description" : "Default: Fuck, Includes: Shit, fuck now what, Taxman lines, skydiving, fuck that was loud"
             "script_path" : "RadialMenus/Swearing.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -68,8 +68,26 @@
 	{
             "keybind_id" : "Radial Menu: Directions",
             "name" : "Radial Menu: Directions",
-            "description" : "Default: Inspire Move, Includes: Time to Go, Hurry, Up/Down/Left/Right"
+            "description" : "Default: Follow Me, Includes: Right way, wrong way, get inside, Up/Down/Left/Right"
             "script_path" : "RadialMenus/Directions.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: MOVE!",
+            "name" : "Radial Menu: MOVE!",
+            "description" : "Default: Inspire Move, Includes: Whistle SFX, move the loot, open the door"
+            "script_path" : "RadialMenus/Move.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Time to Go",
+            "name" : "Radial Menu: Time to Go",
+            "description" : "Default: Time to Go, Includes: Alarm SFX, let's go, we gotta get out"
+            "script_path" : "RadialMenus/TimeToGo.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
 			"localized"   : false,
@@ -86,7 +104,7 @@
 	{
             "keybind_id" : "Radial Menu: Bain: Yes!",
             "name" : "Radial Menu: Bain: Yes!",
-            "description" : "Default: YES!, Includes: "
+            "description" : "Default: YES!, Includes: nailing it, great assault, they haven't heard a thing"
             "script_path" : "RadialMenus/BainYes.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -111,6 +129,15 @@
 			"localized"   : false,
         },
 	{
+            "keybind_id" : "Radial Menu: Alarm SFX",
+            "name" : "Radial Menu: Alarm SFX",
+            "description" : "Default: The Bomb"
+            "script_path" : "RadialMenus/Alarms.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
             "keybind_id" : "Radial Menu: Specials Entrance",
             "name" : "Radial Menu: Specials Entrance",
             "description" : "Default: Captain, Includes: Bulldozer, Medic, Turret, Taser, Cloaker"
@@ -122,7 +149,7 @@
 	{
             "keybind_id" : "Radial Menu: Specials Actions",
             "name" : "Radial Menu: Specials Actions",
-            "description" : "Default: Cloaker Chase, Includes: Various Special Taunts, Cloaker SFX"
+            "description" : "Default: Cloaker Chase, Includes: Various Special Taunts, Cloaker Kick SFX"
             "script_path" : "RadialMenus/SpecialsActions.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -147,8 +174,17 @@
 			"localized"   : false,
         },
 	{
-            "keybind_id" : "SFX: Thermal Drill",
-            "name" : "SFX: Thermal Drill",
+            "keybind_id" : "SFX: Taxman Interrogation",
+            "name" : "SFX: Taxman Interrogation",
+            "description" : "These lines are so great with Bonnie that I wanted a dedicated 'ARE YOU SOME SORT OF FUCKING MORON' key"
+            "script_path" : "SFX/TaxmanInterrogation.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "SFX: The Thermal Drill",
+            "name" : "SFX: The Thermal Drill",
             "description" : "Go get it (only works on Bank Heist)"
             "script_path" : "SFX/ThermalDrill.lua",
             "run_in_menu" : false,
@@ -165,19 +201,10 @@
 			"localized"   : false,
 	},
 	{
-	    "keybind_id" : "SFX: Time To Go",
-            "name" : "SFX: Time To Go",
-            "description" : "Because it's good to spam it when it's time to go"
-            "script_path" : "SFX/TimeToGo.lua",
-            "run_in_menu" : false,
-            "run_in_game" : true,
-			"localized"   : false,
-	},
-	{
-	    "keybind_id" : "SFX: Follow Me",
-            "name" : "SFX: Follow Me",
-            "description" : "Maybe if you spam it, they'll actually follow you"
-            "script_path" : "SFX/FollowMe.lua",
+	    "keybind_id" : "SFX: Whistle",
+            "name" : "SFX: Whistle",
+            "description" : "Grab attention with this"
+            "script_path" : "SFX/Whistle.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
 			"localized"   : false,

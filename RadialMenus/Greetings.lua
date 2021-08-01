@@ -25,19 +25,19 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g14")
 		},
 		{
-			text = "Get down!",
+			text = "Stay down!",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f02x_plu")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f03a_plu")
 		},
 		{
-			text = "Let's go!",
+			text = "Search the place",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v17")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v38")
 		},
 		{
-			text = "It's PAYDAY!",
+			text = "We're in",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v21")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v03")
 		}
 	}
 	

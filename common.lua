@@ -85,8 +85,8 @@ end
 
 params = {
 	name = "VoiceCommandsMenu",
-	radius = 300,
-	deadzone = 25,
+	radius = 325,
+	deadzone = 30,
 	block_all_input = false
 }
 

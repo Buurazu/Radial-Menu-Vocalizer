@@ -1,23 +1,23 @@
 	my_items = {
 		{
-			text = "Inspire Move!",
-			stay_open = false, 	show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g18")
-		},
-		{
-			text = "Hurry!",
-			stay_open = false, 	show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g09")
-		},
-		{
-			text = "Time to Go",
-			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g17")
-		},
-		{
 			text = "Follow Me",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f38_any")
+		},
+		{
+			text = "Right way",
+			stay_open = false, 	show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g12")
+		},
+		{
+			text = "Wrong way",
+			stay_open = false, 	show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g11")
+		},
+		{
+			text = "Get inside",
+			stay_open = false, show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g08")
 		},
 		{
 			text = "Up",
