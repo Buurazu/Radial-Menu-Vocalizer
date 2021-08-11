@@ -101,6 +101,9 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	self._deadzone = params.deadzone --minimum distance from center the mouse must be in order to select an item
 	self._name = name
 	self._items = params.items or {}
+	
+	self._center_font_size = params.center_font_size
+	self._font_size = params.font_size
 		
 	self._hud = base:panel({ --master panel for this instance of RadialMouseMenu
 		name = self._name,
@@ -146,7 +149,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 		name = name .. "_CENTER_TEXT",
 		text = "",
 		layer = 1,
-		font_size = 16,
+		font_size = self._center_font_size,
 		align = "center",
 		vertical = "center",
 		font = tweak_data.hud.medium_font,
@@ -588,7 +591,7 @@ function RadialMouseMenu:populate_items()
 			y = y + 12,
 			align = "center",
 			font = tweak_data.hud.medium_font,
-			font_size = 12,
+			font_size = self._font_size,
 			alpha = 1,
 			layer = 1,
 			color = Color.white

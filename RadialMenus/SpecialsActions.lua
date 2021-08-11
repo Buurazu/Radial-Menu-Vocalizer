@@ -20,19 +20,19 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","tsr_post_tasing_taunt"),
 		},
 		{
-			text = "Cloaker Taunt", 
-			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","cloaker_taunt_after_assault"),
-		},
-		{
 			text = "Shield SFX", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","shield_identification"),
 		},
 		{
-			text = "Cloaker Kick", 
+			text = "Taser Tasered", 
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","clk_punch_3rd_person_3p"),
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","tsr_tasered"),
+		},
+		{
+			text = "Turret Alert", 
+			stay_open = false, show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","swatturret_alert"),
 		},
 		{
 			text = "Bulldozer Sees Player", 

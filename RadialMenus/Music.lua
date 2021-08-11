@@ -35,9 +35,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","resultscreen_lose")
 		},
 		{
-			text = "A Merry Payday Christmas",
+			text = "Shadow Raid Music",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","xmas13_a_merry_payday_christmas")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","kosugi_music")
 		}
 	}
 	

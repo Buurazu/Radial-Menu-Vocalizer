@@ -1,0 +1,21 @@
+{
+	"rmv_options_menu_title" : "Radial Menu Vocalizer",
+	"rmv_options_menu_desc" : "Toggle sending chat messages, change the menu's radius/deadzone/font size",
+
+	"rmv_options_send_chat_title" : "Send Chat",
+	"rmv_options_send_chat_desc" : "Sends a chat message on vocalization for certain commands",
+
+	"rmv_options_radius_title" : "Menu Radius",
+	"rmv_options_radius_desc" : "Size of the menu's radius in pixels (Default: 350)",
+	"rmv_options_deadzone_title" : "Menu Deadzone",
+	"rmv_options_deadzone_desc" : "Minimum distance from center to detect the mouse (Default: 30)",
+
+	"rmv_options_font_size_title" : "Font Size",
+	"rmv_options_font_size_desc" : "Size of each item's text (Default: 12)",
+	"rmv_options_center_font_size_title" : "Center Font Size",
+	"rmv_options_center_font_size_desc" : "Size of the currently selected item's text (Default: 16)",
+
+	"rmv_options_reset_title" : "Reset to Defaults",
+	"rmv_options_reset_desc" : "Reset all settings to their default values"
+
+}

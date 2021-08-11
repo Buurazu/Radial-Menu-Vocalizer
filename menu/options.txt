@@ -1,0 +1,84 @@
+{
+	"menu_id" : "rmv_options_menu",
+	"parent_menu_id" : "blt_options",
+	"title" : "rmv_options_menu_title",
+	"description" : "rmv_options_menu_desc",
+	"back_callback" : "VocalizerOptionsSave",
+	"items" : [
+		{
+			"type" : "toggle",
+			"id" : "send_chat",
+			"title" : "rmv_options_send_chat_title",
+			"description" : "rmv_options_send_chat_desc",
+			"callback" : "VocalizerOptionsCheckbox",
+			"value" : "send_chat"
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "slider",
+			"id" : "radial_menu_radius",
+			"title" : "rmv_options_radius_title",
+			"description" : "rmv_options_radius_desc",
+			"callback" : "VocalizerOptionsValue",
+			"value" : "radial_menu_radius",
+			"default_value" : 350,
+			"min" : 100,
+			"max" : 700,
+			"step" : 5
+		},
+		{
+			"type" : "slider",
+			"id" : "radial_menu_deadzone",
+			"title" : "rmv_options_deadzone_title",
+			"description" : "rmv_options_deadzone_desc",
+			"callback" : "VocalizerOptionsValue",
+			"value" : "radial_menu_deadzone",
+			"default_value" : 30,
+			"min" : 0,
+			"max" : 100,
+			"step" : 5
+		}
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "slider",
+			"id" : "radial_menu_font_size",
+			"title" : "rmv_options_font_size_title",
+			"description" : "rmv_options_font_size_desc",
+			"callback" : "VocalizerOptionsValue",
+			"value" : "radial_menu_font_size",
+			"default_value" : 12,
+			"min" : 6,
+			"max" : 32,
+			"step" : 2
+		},
+		{
+			"type" : "slider",
+			"id" : "radial_menu_center_font_size",
+			"title" : "rmv_options_center_font_size_title",
+			"description" : "rmv_options_center_font_size_desc",
+			"callback" : "VocalizerOptionsValue",
+			"value" : "radial_menu_center_font_size",
+			"default_value" : 16,
+			"min" : 6,
+			"max" : 32,
+			"step" : 2
+		},
+		{
+			"type" : "divider",
+			"size" : 16
+		},
+		{
+			"type" : "button",
+			"id" : "rmv_button_reset",
+			"title" : "rmv_options_reset_title",
+			"description" : "rmv_options_reset_desc",
+			"callback" : "VocalizerResetToDefaultValues"
+		}
+	]
+}

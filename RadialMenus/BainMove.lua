@@ -20,7 +20,7 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_ban_p01")
 		},
 		{
-			text = "Getting unpleasant",
+			text = "Ready to go?",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ce_01")
 		},
