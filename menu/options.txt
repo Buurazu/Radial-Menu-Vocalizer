@@ -14,6 +14,14 @@
 			"value" : "send_chat"
 		},
 		{
+			"type" : "toggle",
+			"id" : "prefix_chat",
+			"title" : "rmv_options_prefix_chat_title",
+			"description" : "rmv_options_prefix_chat_desc",
+			"callback" : "VocalizerOptionsCheckbox",
+			"value" : "prefix_chat"
+		},
+		{
 			"type" : "divider",
 			"size" : 16
 		},

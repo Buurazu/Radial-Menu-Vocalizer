@@ -187,9 +187,12 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	
 	
 	self._center_text = self._hud:text(center_text)
+	if (self._items[1]) then self._center_text:set_text(self._items[1].text) end
 	
 	self._selector = self._hud:bitmap(selector)
 	self._selector:set_center(center_x,center_y)
+	self._selector:set_visible(false)
+	
 	self._arrow = self._hud:bitmap(arrow)
 	--[[
 	local debug_area = self._hud:rect{
@@ -256,7 +259,9 @@ function RadialMouseMenu:mouse_moved(o,mouse_x,mouse_y)
 	else
 		self._selector:set_visible(false)
 		self._selected = false
-		self._center_text:set_visible(false)
+		self._arrow:set_alpha(0)
+		if (self._items[1]) then self._center_text:set_text(self._items[1].text)
+		else self._center_text:set_visible(false) end
 	end
 	
 	local opposite = math.cos((mouse_angle - 180))
@@ -307,6 +312,7 @@ function RadialMouseMenu:on_mouseover_item(index) --you can choose to clone the 
 	end
 	self._selected = index
 	self._selector:set_visible(true)
+	self._arrow:set_alpha(1)
 	local old_item = self:get_item(self._selected)
 	local function animate_flare(o,down)
 		local text_panel = o._text_panel
@@ -372,6 +378,13 @@ function RadialMouseMenu:Show()
 		managers.mouse_pointer:set_mouse_world_position(self._hud:w()/2,self._hud:h()/2) --todo use center() instead
 	end
 	self._active = true
+	
+	if (self._items[1]) then
+		self._center_text:set_visible(true)
+		self._center_text:set_text(self._items[1].text)
+	end
+	self._arrow:set_alpha(0)
+	self._selector:set_visible(false)
 end
 
 function RadialMouseMenu:get_name()

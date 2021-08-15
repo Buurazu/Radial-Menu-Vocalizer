@@ -2,8 +2,10 @@
 	"rmv_options_menu_title" : "Radial Menu Vocalizer",
 	"rmv_options_menu_desc" : "Toggle sending chat messages, change the menu's radius/deadzone/font size",
 
-	"rmv_options_send_chat_title" : "Send Chat",
-	"rmv_options_send_chat_desc" : "Sends a chat message on vocalization for certain commands",
+	"rmv_options_send_chat_title" : "Quickchat",
+	"rmv_options_send_chat_desc" : "Sends a chat message on vocalization for informative sounds/responses (yes, no, escape's here, no more pagers, 10 second countdown, etc.)",
+	"rmv_options_prefix_chat_title" : "Prefix Quickchat Messages",
+	"rmv_options_prefix_chat_desc" : "Toggle prefixing quickchat messages with [RMV]",
 
 	"rmv_options_radius_title" : "Menu Radius",
 	"rmv_options_radius_desc" : "Size of the menu's radius in pixels (Default: 350)",

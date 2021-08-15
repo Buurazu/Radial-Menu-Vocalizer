@@ -3,15 +3,19 @@ VoiceCommandsMod._path = ModPath
 VoiceCommandsMod._data_path = SavePath .. 'radial_menu_vocalizer.txt'
 VoiceCommandsMod.settings = {
 	send_chat = false,
+	prefix_chat = false,
 	radial_menu_radius = 350,
 	radial_menu_deadzone = 30,
 	radial_menu_font_size = 12,
-	radial_menu_center_font_size = 16
+	radial_menu_center_font_size = 16,
+	cop_selection = "l2n",
+	civ_selection = "cm1"
 }
 
 function VoiceCommandsMod:ResetToDefaultValues()
-	self.settings = {
+	VoiceCommandsMod.settings = {
 		send_chat = false,
+		prefix_chat = false,
 		radial_menu_radius = 350,
 		radial_menu_deadzone = 30,
 		radial_menu_font_size = 12,
@@ -20,19 +24,19 @@ function VoiceCommandsMod:ResetToDefaultValues()
 end
 
 function VoiceCommandsMod:Load()
-	local file = io.open(self._data_path, 'r')
+	local file = io.open(VoiceCommandsMod._data_path, 'r')
 	if file then
 		for k, v in pairs(json.decode(file:read('*all')) or {}) do
-			self.settings[k] = v
+			VoiceCommandsMod.settings[k] = v
 		end
 		file:close()
 	end
 end
 
 function VoiceCommandsMod:Save()
-	local file = io.open(self._data_path, 'w+')
+	local file = io.open(VoiceCommandsMod._data_path, 'w+')
 	if file then
-		file:write(json.encode(self.settings))
+		file:write(json.encode(VoiceCommandsMod.settings))
 		file:close()
 	end
 end
@@ -65,7 +69,7 @@ chat_conversion = {
 	play_pln_gen_dir_08 = "Yes!",
 	play_pln_gen_dir_07 = "No!",
 	alarm_countdown_ticking_down_10sec = "10 seconds left!",
-	alarm_the_bomb_on_slow_fade = "!!!",
+	--alarm_the_bomb_on_slow_fade = "!!!",
 	play_pln_gen_urg_01 = "Move move move!",
 	play_pln_gen_bfr_11 = "Let's finish this thing strong!",
 	Play_pln_vih_01 = "Escape's here!",
@@ -84,8 +88,27 @@ chat_conversion = {
 function VoiceCommandsMod:say_line(id)
 	managers.player:local_player():sound():say(id,true,true)
 	if (VoiceCommandsMod.settings.send_chat and chat_conversion[id] ~= nil) then
-		managers.chat:send_message(1,'?',"[RMV] " .. chat_conversion[id])
+		if (VoiceCommandsMod.settings.prefix_chat) then
+			managers.chat:send_message(1,'?',"[RMV] " .. chat_conversion[id])
+		else
+			managers.chat:send_message(1,'?',chat_conversion[id])
+		end
 	end
+end
+
+function VoiceCommandsMod:say_line_cop(id)
+	VoiceCommandsMod:say_line(VoiceCommandsMod.settings.cop_selection .. "_" .. id)
+end
+function VoiceCommandsMod:select_cop(id)
+	VoiceCommandsMod.settings.cop_selection = id
+	VoiceCommandsMod.Save()
+end
+function VoiceCommandsMod:say_line_civ(id)
+	VoiceCommandsMod:say_line(VoiceCommandsMod.settings.civ_selection .. "_" .. id)
+end
+function VoiceCommandsMod:select_civ(id)
+	VoiceCommandsMod.settings.civ_selection = id
+	VoiceCommandsMod.Save()
 end
 
 MyModGlobal = MyModGlobal or class()

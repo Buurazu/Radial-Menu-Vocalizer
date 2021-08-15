@@ -25,9 +25,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","whistling_attention")
 		},
 		{
-			text = "Get up",
+			text = "Found it",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f41_any")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v04")
 		},
 		{
 			text = "Move the loot",
@@ -35,9 +35,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v51")
 		},
 		{
-			text = "Found it",
+			text = "Get up",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v04")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f41_any")
 		}
 	}
 	

@@ -21,7 +21,9 @@ Hooks:Add('MenuManagerInitialize', 'MenuManagerInitialize_RadialMenuVocalizer', 
 
 	MenuCallbackHandler.VocalizerResetToDefaultValues = function(this, item)
 		VoiceCommandsMod:ResetToDefaultValues()
+		
 		MenuHelper:ResetItemsToDefaultValue(item, {['send_chat'] = true}, VoiceCommandsMod.settings.send_chat)
+		MenuHelper:ResetItemsToDefaultValue(item, {['prefix_chat'] = true}, VoiceCommandsMod.settings.prefix_chat)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_radius'] = true}, VoiceCommandsMod.settings.radial_menu_radius)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_deadzone'] = true}, VoiceCommandsMod.settings.radial_menu_deadzone)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_font_size'] = true}, VoiceCommandsMod.settings.radial_menu_font_size)
