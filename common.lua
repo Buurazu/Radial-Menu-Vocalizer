@@ -11,6 +11,7 @@ VoiceCommandsMod.settings = {
 	cop_selection = "l2n",
 	civ_selection = "cm1"
 }
+VoiceCommandsMod.playing_loops = {}
 
 function VoiceCommandsMod:ResetToDefaultValues()
 	VoiceCommandsMod.settings = {
@@ -41,7 +42,7 @@ function VoiceCommandsMod:Save()
 	end
 end
 
-chat_conversion = {
+VoiceCommandsMod._chat_conversion = {
 	Play_pln_pager_a = "Pick up that pager!",
 	play_pln_gen_count_01 = "That's one!",
 	play_pln_gen_count_02 = "That's two!",
@@ -84,15 +85,36 @@ chat_conversion = {
 	v04 = "Found it!"
 }
 
+VoiceCommandsMod._loop_conversion = {
+	dsp_radio_checking_1 = { 15, "dsp_stop_all" },
+	goat_fan_woosh = { 15, "goat_fan_woosh_stop" },
+	goat_sleep = { 10, "goat_sleep_stop" },
+	goat_jump = { 10, "Stop_all_music" }, --no specific stop cue for some goat sfx?
+	goat_hang_scaffold = { 10, "Stop_all_music" },
+	goat_lick = { 10, "Stop_all_music" },
+	goat_says_meh_loop = { 10, "Stop_all_music" },
+	alarm_fire = { 15, "alarm_fire_stop" },
+	alarm_countdown_loop = { 15, "alarm_countdown_loop_stop" },
+	Play_cpl_ch1_02 = { 15, "Stop_cpl_ch1_02"},
+	Play_man_ch1_01 = { 15, "Stop_man_ch1_01"},
+	Play_rcp_ch1_01 = { 15, "Stop_rcp_ch1_01"},
+	
+}
+
 --this function plays the voiceline that is passed to it as an argument
 function VoiceCommandsMod:say_line(id)
 	managers.player:local_player():sound():say(id,true,true)
-	if (VoiceCommandsMod.settings.send_chat and chat_conversion[id] ~= nil) then
+	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil) then
 		if (VoiceCommandsMod.settings.prefix_chat) then
-			managers.chat:send_message(1,'?',"[RMV] " .. chat_conversion[id])
+			managers.chat:send_message(1,'?',"[RMV] " .. VoiceCommandsMod._chat_conversion[id])
 		else
-			managers.chat:send_message(1,'?',chat_conversion[id])
+			managers.chat:send_message(1,'?',VoiceCommandsMod._chat_conversion[id])
 		end
+	end
+	if (VoiceCommandsMod._loop_conversion[id] ~= nil) then
+		local current_time = TimerManager:game():time()
+		table.insert(VoiceCommandsMod.playing_loops,
+			{ current_time + VoiceCommandsMod._loop_conversion[id][1], VoiceCommandsMod._loop_conversion[id][2] })
 	end
 end
 
@@ -171,6 +193,13 @@ function MyModGlobal:Update(t, dt)
 			my_radial_menu:mouse_clicked(my_radial_menu._base,Idstring("0"),0,0)
 			currentkey = nil
 		end
+	end
+	
+	--check for ending loops (just check the front of the queue)
+	local current_time = TimerManager:game():time()
+	if (VoiceCommandsMod.playing_loops[1] and VoiceCommandsMod.playing_loops[1][1] < current_time) then
+		VoiceCommandsMod:say_line(VoiceCommandsMod.playing_loops[1][2])
+		table.remove(VoiceCommandsMod.playing_loops,1)
 	end
 end
 

@@ -15,27 +15,27 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_kick")
 		},
 		{
-			text = "Sleeping\n(Loop)",
+			text = "Sleeping",
 			stay_open = false, 	show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_sleep")
 		},
 		{
-			text = "Baaaa\n(Loop)",
+			text = "Fan Woosh",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_says_meh_loop")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_fan_woosh")
 		},
 		{
-			text = "Lick\n(Loop)",
+			text = "Lick",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_lick")
 		},
 		{
-			text = "Jump\n(Loop)",
+			text = "Jump on Car",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_jump")
 		},
 		{
-			text = "Scaffold\n(Loop)",
+			text = "Scaffold",
 			stay_open = false, 	show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","goat_hang_scaffold")
 		}

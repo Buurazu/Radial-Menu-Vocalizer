@@ -25,9 +25,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g14")
 		},
 		{
-			text = "Stay down!",
+			text = "Clear the room",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f03a_plu")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v18")
 		},
 		{
 			text = "Search the place",

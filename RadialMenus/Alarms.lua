@@ -15,7 +15,7 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","alarm_countdown_ticking_down_10sec")
 		},
 		{
-			text = "Fire Alarm\n(Loop)",
+			text = "Fire Alarm",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","alarm_fire")
 		},
@@ -30,7 +30,7 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","hitec_lotec_alarm_slow_fade")
 		},
 		{
-			text = "Countdown\n(Loop)",
+			text = "Countdown",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","alarm_countdown_loop")
 		},

@@ -20,6 +20,32 @@ Fixed nested radial menus causing issues recognizing currently-open menus due to
 Added on-exit-menu cooldown for blocking attack input
 --]]
 
+--create the textures (if there's a better way to do this, I don't know it)
+DB:create_entry(
+	Idstring('texture'),
+	Idstring('guis/textures/rmm/hud_radialbg'),
+	ModPath .. 'assets/hud_radialbg.texture'
+)
+DB:create_entry(
+	Idstring('texture'),
+	Idstring('guis/textures/rmm/hud_absorb_stack_fg'),
+	ModPath .. 'assets/hud_absorb_stack_fg.texture'
+)
+DB:create_entry(
+	Idstring('texture'),
+	Idstring('guis/textures/rmm/circlefill'),
+	ModPath .. 'assets/circlefill.texture'
+)
+DB:create_entry(
+	Idstring('texture'),
+	Idstring('guis/textures/rmm/pd2_waypoints'),
+	ModPath .. 'assets/pd2_waypoints.texture'
+)
+DB:create_entry(
+	Idstring('texture'),
+	Idstring('guis/textures/rmm/hud_shield'),
+	ModPath .. 'assets/hud_shield.texture'
+)
 
 RadialMouseMenu = RadialMouseMenu or class()
 RadialMouseMenu.MOUSE_ID = "radial_menu_mouse"
@@ -120,7 +146,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	
 	local bg = params.bg or {
 		name = name .. "_BG",
-		texture = "guis/textures/pd2/hud_radialbg",--dark radial background texture (blank circle by default)
+		texture = "guis/textures/rmm/hud_radialbg",--dark radial background texture (blank circle by default)
 --		render_template = "VertexColorTexturedBlur3D",
 		valign = "grow",
 		halign = "grow",
@@ -132,7 +158,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 
 	
 	local blur = params.blur or {
-		texture = tweak_data.hud_icons.icon_circlefill16.texture,
+		texture = "guis/textures/rmm/circlefill",
 		texture_rect = tweak_data.hud_icons.icon_circlefill16.texture_rect,
 		name = name .. "_BLUR",
 		render_template = "VertexColorTexturedBlur3D",
@@ -157,7 +183,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	}
 	local selector = params.selector or {
 		name = name .. "_SELECTOR",
-		texture = "guis/textures/pd2/hud_shield",
+		texture = "guis/textures/rmm/hud_shield",
 		render_template = "VertexColorTexturedRadial",
 		layer = 1,
 		color = Color(1 / #self._items,1,1),
@@ -168,7 +194,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 		name = name .. "_ARROW",
 		w = 16,
 		h = 16,
-		texture = tweak_data.hud_icons.wp_arrow.texture,
+		texture = "guis/textures/rmm/pd2_waypoints",
 		texture_rect = tweak_data.hud_icons.wp_arrow.texture_rect,
 		layer = 1
 	}
@@ -450,7 +476,7 @@ function RadialMouseMenu:create_item(data,skip_refresh) --the slightly easier wa
 	local _text = data.text_panel or {}
 	item.body = {
 		name = name .. "_BODY",
-		texture = _body.texture or "guis/dlcs/coco/textures/pd2/hud_absorb_stack_fg", --body will be boring white radial slice if not specified
+		texture = _body.texture or "guis/textures/rmm/hud_absorb_stack_fg", --body will be boring white radial slice if not specified
 		texture_rect = _body.texture_rect,
 		w = _body.w or 16,
 		h = _body.h or 16,
@@ -566,7 +592,7 @@ function RadialMouseMenu:populate_items()
 		local body = data.bitmap or { --arc texture for this item
 			layer = 1,
 			alpha = 0.3,
-			texture = "guis/dlcs/coco/textures/pd2/hud_absorb_stack_fg", --selection foreground texture
+			texture = "guis/textures/rmm/hud_absorb_stack_fg", --selection foreground texture
 			w = self._size,
 			h = self._size
 		}
