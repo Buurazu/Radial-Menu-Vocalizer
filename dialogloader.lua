@@ -17,4 +17,5 @@ Hooks:PostHook(DialogManager, "_load_dialog_data", "RadialMenuVocalizer_load_dia
 			table.insert(VoiceCommandsMod.dialogs[name], node.sound)
 		end
 	end
+	table.sort(VoiceCommandsMod.dialogs[name])
 end)

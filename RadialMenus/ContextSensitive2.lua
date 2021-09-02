@@ -171,7 +171,6 @@ local gobank = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pt2_cs1_16")
 	}
 }
-
 local alesso = {
 	{
 		text = "Pyro:\nAnother fuckup!", stay_open = false, show_text = true,
@@ -206,9 +205,259 @@ local alesso = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pyr_al1_05")
 	},
 }
+local watchdogs2 = {
+	{
+		text = "Boat:\nIn the water?!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_11")
+	},
+	{
+		text = "I'm here!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_02")
+	},
+	{
+		text = "I can only take one", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_04d")
+	},
+	{
+		text = "Waiting at Dock 7!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_21")
+	},
+	{
+		text = "Waiting at Dock 8!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_22")
+	},
+	{
+		text = "Waiting at Dock 9!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_23")
+	},
+	{
+		text = "Have to leave!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_17")
+	},
+	{
+		text = "Nice!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bot_wd2_03")
+	},
+}
 
+local heisters = { "Dallas", "Chains", "Wolf", "Hoxton", "Houston", "Wick", "Clover", "Dragan", "Jacket", "Bonnie", "Sokol", "Jiro",
+				"Bodhi", "Jimmy", "Sydney", "Rust", "Scarface", "Sangres", "Joy", "Ethan", "Hila", "Duke" }
+local thewhitehouse = {
+	{
+		text = "Death", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_dnt_uno_09")
+	}
+}
+for _, h in ipairs(heisters) do
+	table.insert(thewhitehouse,
+	{
+		text = h, stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_dnt_uno_01_" .. h)
+	})
+end
+
+local bulucsmansion = {
+	{
+		text = "Buluc:\nAbuse", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap01a")
+	},
+	{
+		text = "Vlad Call", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap02")
+	},
+	{
+		text = "Vlad Call 2", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap04")
+	},
+	{
+		text = "Vlad Loud Call", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap08")
+	},
+	{
+		text = "Shoot the fuckers!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap07")
+	},
+	{
+		text = "I must end the party", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_fex_tap07a")
+	},
+	{
+		text = "Girls Conversation", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_party_girls")
+	},
+	{
+		text = "Wife/Husband Convo", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_wife_husband")
+	},
+}
+local nomercy = {
+	{
+		text = "Nurse: Welcome", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_a")
+	},
+	{
+		text = "First, Isolation B", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_b")
+	},
+	{
+		text = "Now, Isolation A", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_c")
+	},
+	{
+		text = "Finally, Isolation C", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_d")
+	},
+	{
+		text = "This man has problems", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_run_01")
+	},
+	{
+		text = "This man has toxins", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_run_04")
+	},
+	{
+		text = "This man will be fine soon", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_run_06")
+	},
+	{
+		text = "He is very contagious", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_zombie_ff")
+	},
+	{
+		text = "His heartrate is abnormal", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_zombie_hr")
+	},
+	{
+		text = "This could be the green flu", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_zombie_cc")
+	},
+	{
+		text = "He will be fine", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_zombie_not_b")
+	},
+	{
+		text = "His heart rate is OK", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_zombie_not_b")
+	},
+	{
+		text = "That's all I can tell you", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_i")
+	},
+	{
+		text = "I'll be over there", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_doc_nmh_h")
+	},
+}
+local undercover = {
+	{
+		text = "Alex: Like a glove!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_crn_man_01")
+	},
+	{
+		text = "Taxman: Enough!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_txm_man_07")
+	},
+	{
+		text = "You hit like a girl!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_txm_man_09")
+	},
+	{
+		text = "Where are you taking me?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_txm_man_03")
+	},
+	{
+		text = "Dealer: You got the data?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_hnc_man_01")
+	},
+	{
+		text = "FBI: Shoot to kill!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pon_man_09")
+	},
+	{
+		text = "Don't give them anything", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pon_man_09")
+	},
+	{
+		text = "We will get you out", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pon_man_09")
+	},
+}
+local heatstreet = {
+	{
+		text = "Eddie: They got me!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bru_run_02")
+	},
+	{
+		text = "Matt: Fuck you guys!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_mtt_run_04")
+	},
+	{
+		text = "Matt at Start", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_mtt_run_01")
+	},
+	{
+		text = "Matt Groaning\n(Long)", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_mtt_run_06")
+	},
+	{
+		text = "Locke: Follow Bile!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_run_05")
+	},
+	{
+		text = "Bile: Let's go!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_run_10")
+	},
+	{
+		text = "I'm here!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_run_03")
+	},
+	{
+		text = "I have to fall back!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_run_06")
+	},
+}
+local panicroombile = {
+	{
+		text = "Bile:\nDeath", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_a64")
+	},
+	{
+		text = "Under fire!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_a63")
+	},
+	{
+		text = "10 more seconds!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_a59")
+	},
+	{
+		text = "Hurry up!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_a09")
+	},
+	{
+		text = "I'm getting peppered!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_flt_02")
+	},
+	{
+		text = "Now we're talking!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_flt_03")
+	},
+	{
+		text = "Clear the roof!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_flt_08")
+	},
+	{
+		text = "Attach the magnet!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_plt_flt_12")
+	},
+}
 
 local predefined = {
+	["Cafe Escape"] = twitch,
+	["Garage Escape"] = twitch,
+	["Overpass Escape"] = { bile, twitch },
+	["Park Escape"] = twitch,
+	["Street Escape"] = { bile, twitch },
+	
 	["Cook Off"] = {twitch, bile},
 	["Transport: Crossroads"] = twitch,
 	["Transport: Downtown"] = {bile, twitch},
@@ -223,9 +472,10 @@ local predefined = {
 
 	["Counterfeit"] = bile, 
 	["Diamond Heist"] = bile,
-	--No Mercy: Nurse
-	["Panic Room"] = {boat, bile}, --yes, boat. idk maybe he drives the truck
-	--Undercover: Taxman / Like a Glove?
+	["No Mercy"] = nomercy,
+	["Panic Room"] = {panicroombile, boat}, --yes, boat. idk maybe he drives the truck
+	["Undercover"] = undercover,
+	["Heat Street"] = heatstreet,
 
 	["Border Crossing"] = ilija,
 	["Border Crystals"] = ilija,
@@ -233,7 +483,7 @@ local predefined = {
 	["Brooklyn Bank"] = twitch,
 	["Henry's Rock"] = twitch, --sure why not
 	["Shacklethorne Auction"] = bile,
-	--The White House: Secret sfx
+	["The White House"] = { thewhitehouse },
 	
 	["The Bomb: Dockyard"] = {bile, ilija},
 	["The Bomb: Forest"] = {bile, ilija},
@@ -242,8 +492,7 @@ local predefined = {
 	["Rats"] = twitch,
 	["Bus Stop"] = bile,
 	["Watchdogs"] = {twitch, bile},
-	["Boat Load"] = {ilija, bile}, --surprisingly no boat, his lines are in the watchdogs file
-	--HOWEVER I should make a Watchdogs 2 boat wheel instead of bile
+	["Boat Load"] = {watchdogs2, ilija}, --also bile even though he isn't the pilot (maybe from day 1 escape?)
 	
 	["Golden Grin Casino"] = {bile, ilija},
 	["Hotline Miami"] = {bile, ilija}, --also twitch but 3 menus is ridiculous... and he's not even used
@@ -255,14 +504,14 @@ local predefined = {
 	["The Biker Heist"] = ilija,
 	["Train Trade"] = ilija,
 	
-	["Buluc's Mansion"] = bile,
+	["Buluc's Mansion"] = {bulucsmansion, bile},
 	["Four Stores"] = twitch,
 	["Mallcrasher"] = {bile, twitch},
 	["Nightclub"] = twitch,
 	["San Martín Bank"] = {bile, ilija},
 	["Santa's Workshop"] = boat,
 	["Stealing Xmas"] = bile,
-	--Goat Sim 2: Pilot? Boris?
+	["Dirty work"] = twitch,
 	
 }
 	function extend(t1, t2)
@@ -273,7 +522,12 @@ local predefined = {
 	local job_day = managers.job:current_stage()
 	if (job_day > 1) then job_name = job_name .. " " .. job_day end
 	
-	--check for Day 2 or Day 3 names (this method works for Crime Spree and Election Day)
+	--this should work well for all Day 1 Crime Spree missions
+	if (managers.crime_spree:is_active()) then
+		job_name = managers.localization:text(managers.crime_spree:get_narrative_tweak_data_for_mission_level(managers.crime_spree:current_mission()).name_id)
+	end
+	
+	--check for Day 2 or Day 3 names (this method works for Day 2+ Crime Sprees and Election Day)
 	local stage_data = managers.job:current_stage_data()
 	local level_data = managers.job:current_level_data()
 	local name_id = stage_data.name_id or level_data.name_id
@@ -284,7 +538,7 @@ local predefined = {
 	
 	if (predefined[job_name]) then
 		--predefined[job_name] is a curated wheel
-		if (#predefined[job_name] == 8) then extend(my_items, predefined[job_name])
+		if (#predefined[job_name] >= 8) then extend(my_items, predefined[job_name])
 		else
 			--multiple accomplices
 			for _, a in ipairs(predefined[job_name]) do
@@ -305,8 +559,7 @@ local predefined = {
 		my_items = {
 			{
 				text = "No secondary menu found for\n" .. job_name,
-				stay_open = false, 	show_text = true,
-				callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","thisissosad")
+				stay_open = false, 	show_text = true
 			}
 		}
 	end

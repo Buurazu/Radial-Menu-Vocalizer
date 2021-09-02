@@ -95,10 +95,13 @@ VoiceCommandsMod._loop_conversion = {
 	goat_says_meh_loop = { 10, "Stop_all_music" },
 	alarm_fire = { 15, "alarm_fire_stop" },
 	alarm_countdown_loop = { 15, "alarm_countdown_loop_stop" },
-	Play_cpl_ch1_02 = { 15, "Stop_cpl_ch1_02"},
-	Play_man_ch1_01 = { 15, "Stop_man_ch1_01"},
-	Play_rcp_ch1_01 = { 15, "Stop_rcp_ch1_01"},
-	
+	Play_cpl_ch1_02 = { 30, "Stop_cpl_ch1_02"},
+	Play_man_ch1_01 = { 30, "Stop_man_ch1_01"},
+	Play_rcp_ch1_01 = { 30, "Stop_rcp_ch1_01"},
+	Play_party_girls = { 30, "Stop_party_girls"},
+	Play_wife_husband = { 30, "Stop_wife_husband"},
+	Play_gangster_conversation = { 30, "Stop_gangster_conversation"},
+	Play_mch_brn_01 = { 10, "Stop_mch_brn_01"},
 }
 
 --this function plays the voiceline that is passed to it as an argument

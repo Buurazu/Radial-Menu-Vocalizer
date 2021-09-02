@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "1.3"
+	"version" : "1.4"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",
@@ -162,7 +162,7 @@
 	{
             "keybind_id" : "SFX: The Thermal Drill",
             "name" : "Radial Menu: Heist-Specific",
-            "description" : " (WIP; non-curated menus show all possible SFX) Heist-specific audio, mostly from Bain\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, answer the phone, Fannies!"
+            "description" : " (WIP; non-curated menus show all possible SFX) Heist-specific audio, mostly from Bain/Locke\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, Answer the phone, Fannies!"
             "script_path" : "RadialMenus/ContextSensitive.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -171,7 +171,8 @@
 	{
 	    "keybind_id" : "SFX: Bile Death",
             "name" : "Radial Menu: Heist-Specific 2",
-            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat Driver, Ilija, Alesso Pyro, GO Bank Phone Calls"
+            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat Driver, Ilija, Alesso Pyro, GO Bank Phone Calls, Buluc, The Dentist, No Mercy Nurse
+"
             "script_path" : "RadialMenus/ContextSensitive2.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
