@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "1.4"
+	"version" : "1.5"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",
@@ -70,6 +70,15 @@
 			"localized"   : false,
         },
 	{
+            "keybind_id" : "Radial Menu: Positive",
+            "name" : "Radial Menu: Positive/Revive",
+            "description" : "Default: Thanks (QC)\nIncludes: Fuck yeah, It's PAYDAY, I'm reviving you, Inspire Revive, You're black and white"
+            "script_path" : "RadialMenus/Positive.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
             "keybind_id" : "Radial Menu: Callouts",
             "name" : "Radial Menu: Callouts",
             "description" : "(QUICKCHAT ENABLED) Default: Need a Medic Bag\nIncludes: Found Keycard/Crowbar, Placed First Aid Kit, Sniper!, Bulldozer!"
@@ -83,6 +92,15 @@
             "name" : "Radial Menu: Swearing",
             "description" : "Default: Fuck\nIncludes: Shit, fuck now what, Taxman lines, skydiving, fuck that was loud"
             "script_path" : "RadialMenus/Swearing.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "Radial Menu: Drills",
+            "name" : "Radial Menu: Drills/Computers/Misc.",
+            "description" : "(More lines for the original 4 + Houston!) Default: Drill's jammed\nIncludes: Computer's jammed, it's jammed, it's stuck, drill's mounted, drill's done"
+            "script_path" : "RadialMenus/Drills.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
 			"localized"   : false,
@@ -162,7 +180,7 @@
 	{
             "keybind_id" : "SFX: The Thermal Drill",
             "name" : "Radial Menu: Heist-Specific",
-            "description" : " (WIP; non-curated menus show all possible SFX) Heist-specific audio, mostly from Bain/Locke\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, Answer the phone, Fannies!"
+            "description" : "Heist-specific audio, mostly from Bain/Locke\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, Answer the phone, Fannies!"
             "script_path" : "RadialMenus/ContextSensitive.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -171,8 +189,7 @@
 	{
 	    "keybind_id" : "SFX: Bile Death",
             "name" : "Radial Menu: Heist-Specific 2",
-            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat Driver, Ilija, Alesso Pyro, GO Bank Phone Calls, Buluc, The Dentist, No Mercy Nurse
-"
+            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat, Ilija, Pyro, Phone Calls, Buluc, The Dentist, Nurse, Taxman, Matt, Ernesto, CFO"
             "script_path" : "RadialMenus/ContextSensitive2.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
@@ -298,7 +315,7 @@
 	{
             "keybind_id" : "Radial Menu: Music",
             "name" : "Radial Menu: Music",
-            "description" : "Default: I Will Give You My All"
+            "description" : "NOTE: Music tends to get act weird and gets stopped easily, especially in loud\nDefault: I Will Give You My All"
             "script_path" : "RadialMenus/Music.lua",
             "run_in_menu" : false,
             "run_in_game" : true,

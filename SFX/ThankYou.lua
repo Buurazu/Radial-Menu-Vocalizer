@@ -1,0 +1,1 @@
+VoiceCommandsMod:say_line("s32x_sin")

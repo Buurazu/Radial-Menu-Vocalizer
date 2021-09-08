@@ -82,7 +82,8 @@ VoiceCommandsMod._chat_conversion = {
 	v09 = "Next objective!",
 	v15 = "Open the door!",
 	v51 = "Move the loot!",
-	v04 = "Found it!"
+	v04 = "Found it!",
+	s05x_sin = "Thanks!",
 }
 
 VoiceCommandsMod._loop_conversion = {
@@ -95,17 +96,28 @@ VoiceCommandsMod._loop_conversion = {
 	goat_says_meh_loop = { 10, "Stop_all_music" },
 	alarm_fire = { 15, "alarm_fire_stop" },
 	alarm_countdown_loop = { 15, "alarm_countdown_loop_stop" },
-	Play_cpl_ch1_02 = { 30, "Stop_cpl_ch1_02"},
-	Play_man_ch1_01 = { 30, "Stop_man_ch1_01"},
-	Play_rcp_ch1_01 = { 30, "Stop_rcp_ch1_01"},
-	Play_party_girls = { 30, "Stop_party_girls"},
-	Play_wife_husband = { 30, "Stop_wife_husband"},
-	Play_gangster_conversation = { 30, "Stop_gangster_conversation"},
-	Play_mch_brn_01 = { 10, "Stop_mch_brn_01"},
+	Play_cpl_ch1_02 = { 60, "Stop_cpl_ch1_02"},
+	Play_man_ch1_01 = { 60, "Stop_man_ch1_01"},
+	Play_rcp_ch1_01 = { 60, "Stop_rcp_ch1_01"},
+	Play_party_girls = { 60, "Stop_party_girls"},
+	Play_wife_husband = { 60, "Stop_wife_husband"},
+	Play_gangster_conversation = { 60, "Stop_gangster_conversation"},
+	Play_mch_brn_01 = { 15, "Stop_mch_brn_01"},
+	Play_bm_fwb_01 = { 60, "Stop_bm_fwb_01"},
+	Play_fe2_fwb_01 = { 60, "Stop_fe2_fwb_01"},
+	Play_be2_fwb_01 = { 60, "Stop_be2_fwb_01"},
+	Play_mc1_fwb_01 = { 60, "Stop_mc1_fwb_01"},
+	Play_dock_convo_sand = { 60, "Stop_dock_convo_sand"},
+	Play_buyers_chas = { 60, "Stop_buyers_chas"},
+	Play_triad_gangsters = { 60, "Stop_triad_gangsters"},
+	Play_npc_tag_poi_01 = { 60, "Stop_npc_tag_poi_01"},
+	Play_mc1_pex_01 = { 30, "Stop_mc1_pex_01" },
+	Play_mc2_pex_01 = { 45, "Stop_mc2_pex_01" },
 }
 
 --this function plays the voiceline that is passed to it as an argument
-function VoiceCommandsMod:say_line(id)
+function VoiceCommandsMod:say_line(id,thirdperson)
+	--if (thirdperson == nil) then managers.player:player_unit():sound_source():set_switch("int_ext", "first") end
 	managers.player:local_player():sound():say(id,true,true)
 	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil) then
 		if (VoiceCommandsMod.settings.prefix_chat) then
@@ -119,6 +131,12 @@ function VoiceCommandsMod:say_line(id)
 		table.insert(VoiceCommandsMod.playing_loops,
 			{ current_time + VoiceCommandsMod._loop_conversion[id][1], VoiceCommandsMod._loop_conversion[id][2] })
 	end
+end
+function VoiceCommandsMod:say_line_thirdperson(id)
+	managers.player:player_unit():sound_source():set_switch("int_ext", "third")
+	VoiceCommandsMod:say_line(id)
+	--I think this works fine?
+	managers.player:player_unit():sound_source():set_switch("int_ext", "first")
 end
 
 function VoiceCommandsMod:say_line_cop(id)
