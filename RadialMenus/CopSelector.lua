@@ -6,13 +6,13 @@ cop_options = {"l4n", "l2n", "l1n", "l3n", "l5n", "l1d", "l2d", "l3d", "l4d", "l
 --l1d - l4d = helmet static cops (Death Sentence only?)
 --does l5d show up? it exists but doesn't seem to spawn
 
-my_items = {}
+VoiceCommandsMod.my_items = {}
 
 for _, value in ipairs(cop_options) do
 	local add_text = ""
 	local my_alpha = 0.3
 	if (VoiceCommandsMod.settings.cop_selection == value) then add_text = "\n(Selected)" end
-	table.insert(my_items,
+	table.insert(VoiceCommandsMod.my_items,
 	{
 		text = cop_names[value] .. add_text, --change this to cop names
 		stay_open = false, show_text = true, alpha = my_alpha,
@@ -20,4 +20,4 @@ for _, value in ipairs(cop_options) do
 	})
 end
 
-MyModGlobal:Refresh(my_items, "Options: Cop Selection")
+VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Options: Cop Selection")

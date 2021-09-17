@@ -1,4 +1,4 @@
-	my_items = {}
+	VoiceCommandsMod.my_items = {}
 
 --List of heist names and the dialog bank they're associated with (not needed when custom menus are complete)
 --[[
@@ -134,13 +134,13 @@ local predefined = VoiceCommandsMod.predefined1
 	
 	if (managers.skirmish:is_skirmish()) then job_name = "Holdout" end
 	
-	if (predefined[job_name]) then my_items = predefined[job_name]
+	if (predefined[job_name]) then VoiceCommandsMod.my_items = predefined[job_name]
 	elseif (dialog_conversion[job_name]) then
 		local dialogs = dialog_conversion[job_name]
 		if (type(dialogs) ~= "table") then dialogs = { dialogs } end
 		for _, d in ipairs(dialogs) do
 			for _, s in ipairs(VoiceCommandsMod.dialogs[d]) do
-				table.insert(my_items, 
+				table.insert(VoiceCommandsMod.my_items, 
 				{ text = s, stay_open = false, show_text = true,
 				callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line",s)
 				})
@@ -148,8 +148,8 @@ local predefined = VoiceCommandsMod.predefined1
 		end
 	end
 	
-	if (#my_items == 0) then
-		my_items = {
+	if (#VoiceCommandsMod.my_items == 0) then
+		VoiceCommandsMod.my_items = {
 			{
 				text = "No sounds found for\n" .. job_name,
 				stay_open = false, 	show_text = true
@@ -158,4 +158,4 @@ local predefined = VoiceCommandsMod.predefined1
 	end
 	
 	--keep the old keybind ID
-	MyModGlobal:Refresh(my_items,"SFX: The Thermal Drill")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"SFX: The Thermal Drill")

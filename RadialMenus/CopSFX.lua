@@ -2,7 +2,7 @@ local copselection = VoiceCommandsMod.settings.cop_selection
 local copregion = VoiceCommandsMod.settings.cop_selection:sub(1,1)
 local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Area clear", 
 			stay_open = false, show_text = true,
@@ -21,7 +21,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	}
 	--l3d is missing a few sounds for some reason, so I guess he gets bonus options
 	if (copselection ~= "l3d") then
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Hey! Intruder! Shit!", 
 			stay_open = false, show_text = true,
@@ -29,7 +29,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 		})
 
 	else
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Ready up!", 
 			stay_open = false, show_text = true,
@@ -38,7 +38,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	end
 	
 	if (copselection ~= "l5d") then
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Go! Fire at will!", 
 			stay_open = false, show_text = true,
@@ -46,7 +46,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 		})
 
 	else
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Civilians on scene!", 
 			stay_open = false, show_text = true,
@@ -56,19 +56,19 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	
 	--basic guards: 3 exclusive patrol lines
 	if (coptype == "n") then
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Signs of intruders", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","a23"),
 		})
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Idle (sneeze, whistle)", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","a06"),
 		})
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "All quiet here", 
 			stay_open = false, show_text = true,
@@ -76,7 +76,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 		})
 	--Zeal guards: 3 exclusive disable lines
 	else
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Disable the drill", 
 			stay_open = false, show_text = true,
@@ -84,21 +84,21 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 		})
 		--why doesn't l1d have "drill disabled"
 		if (copselection ~= "l1d") then
-			table.insert(my_items,
+			table.insert(VoiceCommandsMod.my_items,
 			{
 				text = "Drill disabled", 
 				stay_open = false, show_text = true,
 				callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","e05"),
 			})
 		else
-			table.insert(my_items,
+			table.insert(VoiceCommandsMod.my_items,
 			{
 				text = "Disable their gear", 
 				stay_open = false, show_text = true,
 				callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","e02"),
 			})
 		end
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Unplug them", 
 			stay_open = false, show_text = true,
@@ -109,7 +109,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	
 	--Unused(?) Guard has very few sounds so he gets his own list
 	if (copselection == "l5n") then
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Please stay back", 
 			stay_open = false, show_text = true,
@@ -155,7 +155,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	
 	--mexicans/russians
 	if (copregion ~= "l") then
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "In position!", 
 			stay_open = false, show_text = true,
@@ -200,6 +200,6 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	}
 	end
 	
-	MyModGlobal:Refresh(my_items, "Radial Menu: Cop SFX")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Cop SFX")
 
 		

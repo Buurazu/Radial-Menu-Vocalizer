@@ -646,5 +646,6 @@ function RadialMouseMenu:populate_items()
 	self._init_items_done = true
 end
 
+local initialize = RadialMouseMenu:new({name = "VoiceCommandsMenu"})
 
 Hooks:Add("BaseNetworkSessionOnLoadComplete","radialmousemenu_onloaded",RadialMouseMenu.CreateQueuedMenus)

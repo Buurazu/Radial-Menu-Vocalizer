@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Kick Impact + Fall", 
 			stay_open = false, show_text = true,
@@ -40,6 +40,6 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","clk_x02a_any_3p"),
 		}
 	}
-	MyModGlobal:Refresh(my_items, "Radial Menu: Cloaker SFX")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Cloaker SFX")
 
 		

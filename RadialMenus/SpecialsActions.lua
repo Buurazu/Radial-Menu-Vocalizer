@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Cloaker Chase", 
 			stay_open = false, show_text = true,
@@ -40,6 +40,7 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","bdz_c01"),
 		}
 	}
-	MyModGlobal:Refresh(my_items, "Radial Menu: Specials Actions")
+	--managers.player:local_player():sound():set_voice("rb3")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Specials Actions")
 
 		

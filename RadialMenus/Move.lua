@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Inspire Move!",
 			stay_open = false, 	show_text = true,
@@ -35,10 +35,10 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v51")
 		},
 		{
-			text = "Get up",
+			text = "Get up!",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f41_any")
 		}
 	}
 	
-	MyModGlobal:Refresh(my_items,"Radial Menu: MOVE!")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: MOVE!")

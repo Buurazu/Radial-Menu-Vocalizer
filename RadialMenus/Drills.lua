@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Drill's jammed",
 			stay_open = false, 	show_text = true,
@@ -81,13 +81,13 @@
 	--remove the lines we don't have, in reverse order
 	if (type(whohaswhat[voice]) ~= "table") then
 		for i=14,whohaswhat[voice],-1 do
-			table.remove(my_items,i)
+			table.remove(VoiceCommandsMod.my_items,i)
 		end
 	else
 		for i,c in ipairs(whohaswhat[voice]) do
-			table.remove(my_items,c)
+			table.remove(VoiceCommandsMod.my_items,c)
 		end
 	end
 	
 	--managers.player:local_player():sound():set_voice(voice)
-	MyModGlobal:Refresh(my_items,"Radial Menu: Drills")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Drills")

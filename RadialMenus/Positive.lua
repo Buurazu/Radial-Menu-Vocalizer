@@ -1,5 +1,5 @@
 local is_assault = managers.groupai:state():get_assault_mode()
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Thanks!\n(Revived)",
 			stay_open = false, 	show_text = true,
@@ -43,10 +43,10 @@ local is_assault = managers.groupai:state():get_assault_mode()
 	}
 	
 if (is_assault) then
-	my_items[4] = {
+	VoiceCommandsMod.my_items[4] = {
 			text = "Taunt",
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_thirdperson","g90")
 	}
 end
-	MyModGlobal:Refresh(my_items,"Radial Menu: Positive")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Positive")

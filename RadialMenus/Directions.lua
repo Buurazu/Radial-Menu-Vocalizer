@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Follow Me",
 			stay_open = false, show_text = true,
@@ -41,4 +41,4 @@
 		}
 	}
 	
-	MyModGlobal:Refresh(my_items,"Radial Menu: Directions")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Directions")

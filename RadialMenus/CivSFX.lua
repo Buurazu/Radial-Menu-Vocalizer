@@ -1,6 +1,6 @@
 local coptype = VoiceCommandsMod.settings.civ_selection:sub(2,2)
 
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Scream 1", 
 			stay_open = false, show_text = true,
@@ -30,13 +30,13 @@ local coptype = VoiceCommandsMod.settings.civ_selection:sub(2,2)
 	
 	--for some reason there's no female stockholm or 911 call audio?
 	if (coptype == "m") then
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Old Stockholm Syndrome", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_civ","stockholm_syndrome"),
 		})
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "911 Call", 
 			stay_open = false, show_text = true,
@@ -44,6 +44,6 @@ local coptype = VoiceCommandsMod.settings.civ_selection:sub(2,2)
 		})
 	end
 	
-	MyModGlobal:Refresh(my_items, "Radial Menu: Civ SFX")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Civ SFX")
 
 		

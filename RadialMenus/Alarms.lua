@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "The Bomb",
 			stay_open = false, 	show_text = true,
@@ -41,4 +41,4 @@
 		}
 	}
 	
-	MyModGlobal:Refresh(my_items,"Radial Menu: Alarm SFX")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Alarm SFX")

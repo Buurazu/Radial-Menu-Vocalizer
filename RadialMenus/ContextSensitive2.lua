@@ -1,4 +1,4 @@
-	my_items = {}
+	VoiceCommandsMod.my_items = {}
 
 local predefined = VoiceCommandsMod.predefined2
 
@@ -26,25 +26,25 @@ local predefined = VoiceCommandsMod.predefined2
 	
 	if (predefined[job_name]) then
 		--predefined[job_name] is a curated wheel
-		if (#predefined[job_name] >= 8) then extend(my_items, predefined[job_name])
+		if (#predefined[job_name] >= 8) then extend(VoiceCommandsMod.my_items, predefined[job_name])
 		else
 			--multiple accomplices
 			for _, a in ipairs(predefined[job_name]) do
-				extend(my_items, a)
+				extend(VoiceCommandsMod.my_items, a)
 			end
 		end
 	--if we don't have predefined, fill it with all accomplices, for testing purposes
 	--testing is complete
 	--[[
 	else
-		extend(my_items, VoiceCommandsMod.menus2.boat)
-		extend(my_items, VoiceCommandsMod.menus2.twitch)
-		extend(my_items, VoiceCommandsMod.menus2.bile)
-		extend(my_items, VoiceCommandsMod.menus2.ilija)]]
+		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.boat)
+		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.twitch)
+		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.bile)
+		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.ilija)]]
 	end
 
-	if (#my_items == 0) then
-		my_items = {
+	if (#VoiceCommandsMod.my_items == 0) then
+		VoiceCommandsMod.my_items = {
 			{
 				text = "No secondary menu found for\n" .. job_name,
 				stay_open = false, 	show_text = true
@@ -53,4 +53,4 @@ local predefined = VoiceCommandsMod.predefined2
 	end
 	
 	--keep the old keybind ID
-	MyModGlobal:Refresh(my_items,"SFX: Bile Death")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"SFX: Bile Death")

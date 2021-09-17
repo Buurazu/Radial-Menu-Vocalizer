@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "HO HO HO!",
 			stay_open = false, show_text = true,
@@ -41,4 +41,4 @@
 		}
 	}
 	
-	MyModGlobal:Refresh(my_items,"Radial Menu: Christmas")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Christmas")

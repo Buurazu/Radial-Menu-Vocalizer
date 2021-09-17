@@ -1,6 +1,28 @@
 _G.VoiceCommandsMod = _G.VoiceCommandsMod or {}
 VoiceCommandsMod._path = ModPath
 VoiceCommandsMod._data_path = SavePath .. 'radial_menu_vocalizer.txt'
+
+VoiceCommandsMod._chat_in_order = {
+{"Positive"},"s05x_sin",
+{"Bain: Yes!"},"play_pln_gen_dir_08",
+{"Bain: No!"},"play_pln_gen_dir_07",
+{"Alarms"},"alarm_countdown_ticking_down_10sec","alarm_the_bomb_on_slow_fade",
+{"Drills"},"d01x_sin",
+{"Heist-Specific (Rats/Cook Off/Lab Rats)", 8},"Play_pln_rat_stage1_20","Play_pln_rat_stage1_22","Play_pln_rat_stage1_24",
+
+{"Callouts", 8},"g80x_plu","g81x_plu","v10","v57","s01x_plu","s02x_plu","s12","s13",
+{"Enemy Callouts", 8},	"f30y_any",	"f31y_any",	"f32y_any",	"f33y_any",	"f34y_any",	"f47x_any",	"f44x_any",	"g41x_any",	"g42x_any",
+{"MOVE!", 8}, "g18", "g09", "v15", "v09", "whistling_attention", "v04", "v51", "f41_any",
+{"Directions", 8},	"f38_any",	"g12",	"g11",	"g08",	"g05",	"g06",	"g03",	"g04",
+{"Time to Go", 8}, "g17", "v08", "v17", "g07", "g13", "v07", "v26",
+
+{"Bain: Pagers", 8},"Play_pln_pager_a","play_pln_gen_count_01","play_pln_gen_count_02","play_pln_gen_count_03","play_pln_gen_count_04","play_pln_gen_count_15","play_pln_gen_count_16","Play_pln_pager_g",
+{"Bain: MOVE!", 8},	"play_pln_gen_urg_01",	"play_pln_gen_bfr_10",	"Play_pln_hur_01",	"Play_ban_p01",	"Play_pln_ce_01",	"play_pln_gen_fbo_01",	"play_pln_gen_bfr_11",	"Play_pln_vih_01",
+
+
+}
+
+
 VoiceCommandsMod.settings = {
 	send_chat = false,
 	prefix_chat = false,
@@ -11,17 +33,20 @@ VoiceCommandsMod.settings = {
 	cop_selection = "l2n",
 	civ_selection = "cm1"
 }
+for _,v in ipairs(VoiceCommandsMod._chat_in_order) do
+	if (type(v) ~= "table") then
+		VoiceCommandsMod.settings["rmv_chat_toggle_" .. v] = true
+	end
+end
 VoiceCommandsMod.playing_loops = {}
 
 function VoiceCommandsMod:ResetToDefaultValues()
-	VoiceCommandsMod.settings = {
-		send_chat = false,
-		prefix_chat = false,
-		radial_menu_radius = 350,
-		radial_menu_deadzone = 30,
-		radial_menu_font_size = 12,
-		radial_menu_center_font_size = 16
-	}
+	VoiceCommandsMod.settings.send_chat = false
+	VoiceCommandsMod.settings.prefix_chat = false
+	VoiceCommandsMod.settings.radial_menu_radius = 350
+	VoiceCommandsMod.settings.radial_menu_deadzone = 30
+	VoiceCommandsMod.settings.radial_menu_font_size = 12
+	VoiceCommandsMod.settings.radial_menu_center_font_size = 16
 end
 
 function VoiceCommandsMod:Load()
@@ -51,14 +76,27 @@ VoiceCommandsMod._chat_conversion = {
 	play_pln_gen_count_15 = "Just two more!",
 	play_pln_gen_count_16 = "Just one more!",
 	Play_pln_pager_g = "No more pagers!",
+	
 	g80x_plu = "I need a Doctor Bag/FAK!",
 	g81x_plu = "I need an Ammo Bag!",
-	f30y_any = "Bulldozer!",
-	f34y_any = "Sniper!",
-	f44x_any = "Turret!",
-	s12 = "First Aid Kit!",
 	v10 = "I found a keycard!",
 	v57 = "I found a crowbar!",
+	s01x_plu = "Ammo Bag!",
+	s02x_plu = "Doctor Bag!",
+	s12 = "First Aid Kit!",
+	s13 = "Body Bag Case!",
+	
+	f30y_any = "Bulldozer!",
+	f31y_any = "Shield!",
+	f32y_any = "Taser!",
+	f33y_any = "Cloaker!",
+	f34y_any = "Sniper!",
+	f44x_any = "Turret!",
+	f47x_any = "Medic!",
+	--g40x_any = "Smoke!",
+	g41x_any = "Flashbang!",
+	g42x_any = "Tear gas!",
+	
 	f38_any = "Follow me!",
 	g12 = "This is the right way!",
 	g11 = "That's the wrong way!",
@@ -67,23 +105,45 @@ VoiceCommandsMod._chat_conversion = {
 	g06 = "Down!",
 	g03 = "Left!",
 	g04 = "Right!",
-	play_pln_gen_dir_08 = "Yes!",
-	play_pln_gen_dir_07 = "No!",
-	alarm_countdown_ticking_down_10sec = "10 seconds left!",
-	--alarm_the_bomb_on_slow_fade = "!!!",
+	
 	play_pln_gen_urg_01 = "Move move move!",
-	play_pln_gen_bfr_11 = "Let's finish this thing strong!",
-	Play_pln_vih_01 = "Escape's here!",
+	play_pln_gen_bfr_10 = "Clock's ticking, people!",
+	Play_pln_hur_01 = "Pronto, people!",
+	Play_ban_p01 = "This is the point of no return!",
 	Play_pln_ce_01 = "Ready to go?",
 	play_pln_gen_fbo_01 = "Onto the next step!",
-	Play_pln_hur_01 = "Pronto, people!",
-	play_pln_gen_bfr_10 = "Clock's ticking, people!",
-	Play_ban_p01 = "This is the point of no return!",
+	play_pln_gen_bfr_11 = "Let's finish this thing strong!",
+	Play_pln_vih_01 = "Escape's here!",
+	
 	v09 = "Next objective!",
 	v15 = "Open the door!",
 	v51 = "Move the loot!",
 	v04 = "Found it!",
+	whistling_attention = "*whistle*",
+	f41_any = "Get up!",
+	g18 = "Move!",
+	g09 = "Hurry!",
+	
 	s05x_sin = "Thanks!",
+	play_pln_gen_dir_08 = "Yes!",
+	play_pln_gen_dir_07 = "No!",
+	alarm_countdown_ticking_down_10sec = "10 seconds left!",
+	alarm_the_bomb_on_slow_fade = "Alarm!!!",
+	d01x_sin = "Drill's jammed!",
+	
+	Play_pln_rat_stage1_20 = "Muriatic Acid!",
+	Play_pln_rat_stage1_22 = "Caustic Soda!",
+	Play_pln_rat_stage1_24 = "Hydrogen Chloride!",
+	
+	g17 = "Time to go!",
+	v08 = "We're done!",
+	v17 = "Let's go, team!",
+	g07 = "We gotta get out!",
+	g13 = "Let's go!",
+	v07 = "It's finished!",
+	v26 = "There's our escape!",
+	
+	
 }
 
 VoiceCommandsMod._loop_conversion = {
@@ -116,10 +176,10 @@ VoiceCommandsMod._loop_conversion = {
 }
 
 --this function plays the voiceline that is passed to it as an argument
-function VoiceCommandsMod:say_line(id,thirdperson)
-	--if (thirdperson == nil) then managers.player:player_unit():sound_source():set_switch("int_ext", "first") end
+function VoiceCommandsMod:say_line(id)
 	managers.player:local_player():sound():say(id,true,true)
-	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil) then
+	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil and
+		VoiceCommandsMod.settings["rmv_chat_toggle_" .. id]) then
 		if (VoiceCommandsMod.settings.prefix_chat) then
 			managers.chat:send_message(1,'?',"[RMV] " .. VoiceCommandsMod._chat_conversion[id])
 		else
@@ -154,30 +214,30 @@ function VoiceCommandsMod:select_civ(id)
 	VoiceCommandsMod.Save()
 end
 
-MyModGlobal = MyModGlobal or class()
+VoiceCommandsMod = VoiceCommandsMod or class()
 
-function MyModGlobal:SetMyRadialMenu(menu) --"setter" function
-	my_radial_menu = menu
+function VoiceCommandsMod:SetMyRadialMenu(menu) --"setter" function
+	VoiceCommandsMod.my_radial_menu = menu
 	if not managers.hud then 
 		return
 	end
 	managers.hud:add_updator("checkradialkey", callback(self, self, "Update"))
 end
 
-function MyModGlobal:Refresh(items, id)
-	MyModGlobal:CreateTheMenu()
-	my_radial_menu:clear_items()
+function VoiceCommandsMod:Refresh(items, id)
+	VoiceCommandsMod:CreateTheMenu()
+	VoiceCommandsMod.my_radial_menu:clear_items()
 	for index, value in ipairs(items) do
-		my_radial_menu:add_item(value,true)
+		VoiceCommandsMod.my_radial_menu:add_item(value,true)
 	end
-	my_radial_menu:populate_items()
-	my_radial_menu:Show()
+	VoiceCommandsMod.my_radial_menu:populate_items()
+	VoiceCommandsMod.my_radial_menu:Show()
 	
 	--find what keypress we should watch for letting go
 	currentkey = self:GetBLTKeybind(id)
 end
 
-function MyModGlobal:GetBLTKeybind(id,...)
+function VoiceCommandsMod:GetBLTKeybind(id,...)
 	for k,v in pairs(BLT.Keybinds._keybinds) do
 		if type(v) == "table" then
 			if v["_id"] == id then
@@ -205,13 +265,13 @@ function MyModGlobal:GetBLTKeybind(id,...)
 	end
 end
 
-function MyModGlobal:Update(t, dt)
-	if (not my_radial_menu:active()) then
+function VoiceCommandsMod:Update(t, dt)
+	if (not VoiceCommandsMod.my_radial_menu:active()) then
 		currentkey = nil
 	end
-	if (my_radial_menu:active() and currentkey ~= nil) then
+	if (VoiceCommandsMod.my_radial_menu:active() and currentkey ~= nil) then
 		if (self:CheckKeyDown(currentkey) == false) then
-			my_radial_menu:mouse_clicked(my_radial_menu._base,Idstring("0"),0,0)
+			VoiceCommandsMod.my_radial_menu:mouse_clicked(VoiceCommandsMod.my_radial_menu._base,Idstring("0"),0,0)
 			currentkey = nil
 		end
 	end
@@ -224,7 +284,7 @@ function MyModGlobal:Update(t, dt)
 	end
 end
 
-function MyModGlobal:CheckKeyDown(key)
+function VoiceCommandsMod:CheckKeyDown(key)
 	if not (managers and managers.hud) or managers.hud._chat_focus then
 		return false
 	end
@@ -240,7 +300,7 @@ function MyModGlobal:CheckKeyDown(key)
 	end
 end
 
-function MyModGlobal:CreateTheMenu()
+function VoiceCommandsMod:CreateTheMenu()
 	params = {
 		name = "VoiceCommandsMenu",
 		radius = VoiceCommandsMod.settings.radial_menu_radius,
@@ -250,5 +310,5 @@ function MyModGlobal:CreateTheMenu()
 		center_font_size = VoiceCommandsMod.settings.radial_menu_center_font_size,
 	}
 
-	my_radial_menu = RadialMouseMenu:new(params,callback(MyModGlobal,MyModGlobal,"SetMyRadialMenu"))
+	VoiceCommandsMod.my_radial_menu = RadialMouseMenu:new(params,callback(VoiceCommandsMod,VoiceCommandsMod,"SetMyRadialMenu"))
 end

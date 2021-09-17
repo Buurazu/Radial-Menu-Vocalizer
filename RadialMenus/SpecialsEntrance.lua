@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Captain!", 
 			stay_open = false, show_text = true,
@@ -40,6 +40,6 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","mdc_entrance"),
 		}
 	}
-	MyModGlobal:Refresh(my_items, "Radial Menu: Specials Entrance")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Specials Entrance")
 
 		

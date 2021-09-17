@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Doctor Bag",
 			stay_open = false, 	show_text = true,
@@ -8,11 +8,6 @@
 			text = "Ammo Bag",
 			stay_open = false, 	show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","g81x_plu")
-		},
-		{
-			text = "Bulldozer!",
-			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f30y_any")
 		},
 		{
 			text = "Found Keycard",
@@ -25,9 +20,14 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v57")
 		},
 		{
-			text = "Sniper!",
+			text = "Placed Doctor Bag",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f34y_any")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","s02x_plu")
+		},
+		{
+			text = "Placed Ammo Bag",
+			stay_open = false, show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","s01x_plu")
 		},
 		{
 			text = "Placed First Aid Kit",
@@ -35,10 +35,10 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","s12")
 		},
 		{
-			text = "Turret!",
+			text = "Placed Body Bag Case",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f44x_any")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","s13")
 		}
 	}
 	
-	MyModGlobal:Refresh(my_items,"Radial Menu: Callouts")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items,"Radial Menu: Callouts")

@@ -1,4 +1,4 @@
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "This is the Police", 
 			stay_open = false, show_text = true,
@@ -40,6 +40,6 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","mga_generic_a"),
 		}
 	}
-	MyModGlobal:Refresh(my_items, "Radial Menu: Megaphone Cop")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Megaphone Cop")
 
 		

@@ -2,7 +2,7 @@ local copselection = VoiceCommandsMod.settings.cop_selection
 local copregion = VoiceCommandsMod.settings.cop_selection:sub(1,1)
 local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Death", 
 			stay_open = false, show_text = true,
@@ -36,26 +36,26 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	}
 	--l3d is missing a few sounds for some reason, so I guess he gets bonus options
 	if (copselection ~= "l3d") then
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "On Fire", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","burnhurt"),
 		})
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Fire Death", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","burndeath"),
 		})
 	else
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Help!", 
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","hlp"),
 		})
-		table.insert(my_items,
+		table.insert(VoiceCommandsMod.my_items,
 		{
 			text = "Contact!", 
 			stay_open = false, show_text = true,
@@ -65,7 +65,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	
 	--Unused(?) Guard has very few sounds so he gets his own list
 	if (copselection == "l5n") then
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Fire Death", 
 			stay_open = false, show_text = true,
@@ -111,7 +111,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	
 	--mexicans/russians (russians have no hurt/death sound but who cares enough to separate them)
 	if (copregion ~= "l") then
-	my_items = {
+	VoiceCommandsMod.my_items = {
 		{
 			text = "Fire Death", 
 			stay_open = false, show_text = true,
@@ -155,6 +155,6 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 	}
 	end
 	
-	MyModGlobal:Refresh(my_items, "Radial Menu: Cop SFX: Pain")
+	VoiceCommandsMod:Refresh(VoiceCommandsMod.my_items, "Radial Menu: Cop SFX: Pain")
 
 		
