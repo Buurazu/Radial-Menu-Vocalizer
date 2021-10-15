@@ -1,18 +1,6 @@
 local key = ModPath .. '	' .. RequiredScript
 if _G[key] then return else _G[key] = true end
 
-Hooks:Add('LocalizationManagerPostInit', 'LocalizationManagerPostInit_RadialMenuVocalizer', function(loc)
-	--loc:load_localization_file(VoiceCommandsMod._path .. 'menu/english.txt', false)
-end)
-
-Hooks:Add('MenuManagerInitialize', 'MenuManagerInitialize_RadialMenuVocalizer', function(menu_manager)
-
-	
-
-	--MenuHelper:LoadFromJsonFile(VoiceCommandsMod._path .. 'menu/options.txt', VoiceCommandsMod, VoiceCommandsMod.settings)
-	
-end)
-
 Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenuVocalizer", function(menu_manager, nodes)
 	
 	MenuCallbackHandler.VocalizerOptionsCheckbox = function(this, item)
@@ -32,6 +20,7 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 		
 		MenuHelper:ResetItemsToDefaultValue(item, {['send_chat'] = true}, VoiceCommandsMod.settings.send_chat)
 		MenuHelper:ResetItemsToDefaultValue(item, {['prefix_chat'] = true}, VoiceCommandsMod.settings.prefix_chat)
+		MenuHelper:ResetItemsToDefaultValue(item, {['no_chat_on_click'] = true}, VoiceCommandsMod.settings.no_chat_on_click)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_radius'] = true}, VoiceCommandsMod.settings.radial_menu_radius)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_deadzone'] = true}, VoiceCommandsMod.settings.radial_menu_deadzone)
 		MenuHelper:ResetItemsToDefaultValue(item, {['radial_menu_font_size'] = true}, VoiceCommandsMod.settings.radial_menu_font_size)
@@ -51,6 +40,9 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 	rmv_options_send_chat_desc = "Sends a chat message on vocalization for informative sounds/responses\n(yes, no, escape's here, no more pagers, 10 second countdown, etc.)",
 	rmv_options_prefix_chat_title = "Prefix Quickchat Messages",
 	rmv_options_prefix_chat_desc = "Toggle prefixing quickchat messages with [RMV]",
+	
+	rmv_options_no_chat_on_click_title = "Don't Quickchat/Close on Mouse Click",
+	rmv_options_no_chat_on_click_desc = "Disable quickchat, and keep the menu open, when you left-click instead of releasing the menu hotkey\nThis lets you use a sound you normally want to quickchat without spamming chat",
 
 	rmv_options_radius_title = "Menu Radius",
 	rmv_options_radius_desc = "Size of the menu's radius in pixels (Default: 350)",
@@ -90,6 +82,17 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 			desc = "rmv_options_prefix_chat_desc",
 			callback = "VocalizerOptionsCheckbox",
 			value = VoiceCommandsMod.settings["prefix_chat"]
+		}
+	)
+	MenuHelper:AddToggle(
+		{
+			priority = 185,
+			menu_id = "rmv_options_menu",
+			id = "no_chat_on_click",
+			title = "rmv_options_no_chat_on_click_title",
+			desc = "rmv_options_no_chat_on_click_desc",
+			callback = "VocalizerOptionsCheckbox",
+			value = VoiceCommandsMod.settings["no_chat_on_click"]
 		}
 	)
 	MenuHelper:AddDivider(

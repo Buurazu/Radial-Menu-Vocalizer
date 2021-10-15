@@ -26,6 +26,7 @@ VoiceCommandsMod._chat_in_order = {
 VoiceCommandsMod.settings = {
 	send_chat = false,
 	prefix_chat = false,
+	no_chat_on_click = false,
 	radial_menu_radius = 350,
 	radial_menu_deadzone = 30,
 	radial_menu_font_size = 12,
@@ -43,6 +44,7 @@ VoiceCommandsMod.playing_loops = {}
 function VoiceCommandsMod:ResetToDefaultValues()
 	VoiceCommandsMod.settings.send_chat = false
 	VoiceCommandsMod.settings.prefix_chat = false
+	VoiceCommandsMod.settings.no_chat_on_click = false
 	VoiceCommandsMod.settings.radial_menu_radius = 350
 	VoiceCommandsMod.settings.radial_menu_deadzone = 30
 	VoiceCommandsMod.settings.radial_menu_font_size = 12
@@ -179,7 +181,8 @@ VoiceCommandsMod._loop_conversion = {
 function VoiceCommandsMod:say_line(id)
 	managers.player:local_player():sound():say(id,true,true)
 	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil and
-		VoiceCommandsMod.settings["rmv_chat_toggle_" .. id]) then
+		VoiceCommandsMod.settings["rmv_chat_toggle_" .. id] and
+		(not VoiceCommandsMod.mouse_was_clicked or not VoiceCommandsMod.settings.no_chat_on_click)) then
 		if (VoiceCommandsMod.settings.prefix_chat) then
 			managers.chat:send_message(1,'?',"[RMV] " .. VoiceCommandsMod._chat_conversion[id])
 		else
@@ -271,7 +274,7 @@ function VoiceCommandsMod:Update(t, dt)
 	end
 	if (VoiceCommandsMod.my_radial_menu:active() and currentkey ~= nil) then
 		if (self:CheckKeyDown(currentkey) == false) then
-			VoiceCommandsMod.my_radial_menu:mouse_clicked(VoiceCommandsMod.my_radial_menu._base,Idstring("0"),0,0)
+			VoiceCommandsMod.my_radial_menu:mouse_clicked(VoiceCommandsMod.my_radial_menu._base,Idstring("-1"),0,0)
 			currentkey = nil
 		end
 	end

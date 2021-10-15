@@ -20,9 +20,11 @@ local predefined = VoiceCommandsMod.predefined2
 	local level_data = managers.job:current_level_data()
 	local name_id = stage_data.name_id or level_data.name_id
 	local day_name = managers.localization:text(name_id)
-	if (predefined[day_name]) then job_name = day_name end
+	--due to Rats day 1 being named "Cook Off", it grabs the incorrect secondary menu with Bile
+	if (predefined[day_name] and day_name ~= "Cook Off") then job_name = day_name end
 	
 	if (managers.skirmish:is_skirmish()) then job_name = "Holdout" end
+	
 	
 	if (predefined[job_name]) then
 		--predefined[job_name] is a curated wheel
@@ -34,13 +36,13 @@ local predefined = VoiceCommandsMod.predefined2
 			end
 		end
 	--if we don't have predefined, fill it with all accomplices, for testing purposes
-	--testing is complete
-	--[[
-	else
+	
+	elseif (false) then
 		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.boat)
 		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.twitch)
 		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.bile)
-		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.ilija)]]
+		extend(VoiceCommandsMod.my_items, VoiceCommandsMod.menus2.ilija)
+	
 	end
 
 	if (#VoiceCommandsMod.my_items == 0) then

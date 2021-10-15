@@ -5,26 +5,63 @@ VoiceCommandsMod.menus2 = {}
 
 --Get all sound IDs from the dialog list and associate them with their mission
 --When the context sensitive menus are complete, we won't need to do this anymore
---[[
-Hooks:PostHook(DialogManager, "_load_dialog_data", "RadialMenuVocalizer_load_dialog_data", function(self, name)
-	VoiceCommandsMod.dialogs[name] = {}
-	local file_name = "gamedata/dialogs/" .. name
-	local data = PackageManager:script_data(Idstring("dialog"), file_name:id())
-	
-	for _, node in ipairs(data) do
-		if node._meta == "dialog" then
-			if not node.id or not node.sound then
-				break
+
+if (false) then
+	Hooks:PostHook(DialogManager, "_load_dialog_data", "RadialMenuVocalizer_load_dialog_data", function(self, name)
+		VoiceCommandsMod.dialogs[name] = {}
+		local file_name = "gamedata/dialogs/" .. name
+		local data = PackageManager:script_data(Idstring("dialog"), file_name:id())
+		
+		for _, node in ipairs(data) do
+			if node._meta == "dialog" then
+				if not node.id or not node.sound then
+					break
+				end
+				
+				table.insert(VoiceCommandsMod.dialogs[name], node.sound)
 			end
-			
-			table.insert(VoiceCommandsMod.dialogs[name], node.sound)
 		end
-	end
-	table.sort(VoiceCommandsMod.dialogs[name])
-end)
-]]
+		table.sort(VoiceCommandsMod.dialogs[name])
+	end)
+end
+
 
 --protip: fold/collapse all on this file
+VoiceCommandsMod.menus.blackcat = {
+	{
+		text = "Find Kang's phone number", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_chca_15")
+	},
+	{
+		text = "Vlad, prosthetic hand?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_chca_118")
+	},
+	{
+		text = "Good calling card", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_chca_89")
+	},
+	{
+		text = "Vlad Phone Call", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_chca_20")
+	},
+	{
+		text = "Bartender Briefing", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_bar_chca_01")
+	},
+	{
+		text = "Meeting Interrupted", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_chca_meeting_02")
+	},
+	{
+		text = "Kang: Payday Gang!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_xuk_chca_12")
+	},
+	{
+		text = "Yufu: I will drop you", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_chca_02")
+	},
+}
+
 
 VoiceCommandsMod.menus2.boat = {
 	{
@@ -3653,6 +3690,8 @@ VoiceCommandsMod.menus2.counterfeit = {
 
 
 VoiceCommandsMod.predefined1 = {
+	["Black Cat"] = VoiceCommandsMod.menus.blackcat,
+
 	["Overpass Escape"] = VoiceCommandsMod.menus.escapeoverpass,
 	["Park Escape"] = VoiceCommandsMod.menus.escapepark,
 	["Street Escape"] = VoiceCommandsMod.menus.escapestreet,

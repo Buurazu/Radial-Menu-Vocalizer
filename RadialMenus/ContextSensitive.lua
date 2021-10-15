@@ -1,8 +1,10 @@
 	VoiceCommandsMod.my_items = {}
+local dialog_conversion = {}
 
 --List of heist names and the dialog bank they're associated with (not needed when custom menus are complete)
 --[[
 local dialog_conversion = {
+	["Black Cat"] = "l_chca_stage1",
 	["Cafe Escape"] = { "generic"},
 	--accomplice_boat, driver_1, driver_2, heli_1, sniper
 	["Car Shop"] = "b_carshop_stage1",
@@ -112,7 +114,6 @@ local dialog_conversion = {
 	["White Xmas"] = "v_pines_stage1"
 }
 ]]
-local dialog_conversion = {}
 
 local predefined = VoiceCommandsMod.predefined1
 

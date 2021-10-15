@@ -305,15 +305,23 @@ function RadialMouseMenu:mouse_clicked(o,button,x,y)
 		self:Hide(nil,false)
 		return
 	end
-	if button ~= Idstring("0") then 
+	if button ~= Idstring("0") and button ~= Idstring("-1") then 
 		return
+	end
+	local skip_hide = false
+	if button == Idstring("0") then
+		VoiceCommandsMod.mouse_was_clicked = true
+		--allow spamming without menu closing on click
+		if (VoiceCommandsMod.settings.no_chat_on_click) then skip_hide = true end
+	else
+		VoiceCommandsMod.mouse_was_clicked = false
 	end
 	local item = self._selected and self._items[self._selected]
 	if item then 
-		self:on_item_clicked(item)
+		self:on_item_clicked(item, skip_hide)
 	--default to item 1
 	elseif self._items[1] then
-		self:on_item_clicked(self._items[1])
+		self:on_item_clicked(self._items[1], skip_hide)
 	end
 end
 
