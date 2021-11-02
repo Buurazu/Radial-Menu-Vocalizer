@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "1.7"
+	"version" : "1.7.1"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",

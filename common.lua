@@ -179,6 +179,7 @@ VoiceCommandsMod._loop_conversion = {
 
 --this function plays the voiceline that is passed to it as an argument
 function VoiceCommandsMod:say_line(id)
+	if (not managers.player or not managers.player:local_player() or not managers.player:local_player():sound()) then return end
 	managers.player:local_player():sound():say(id,true,true)
 	if (VoiceCommandsMod.settings.send_chat and VoiceCommandsMod._chat_conversion[id] ~= nil and
 		VoiceCommandsMod.settings["rmv_chat_toggle_" .. id] and
@@ -196,6 +197,7 @@ function VoiceCommandsMod:say_line(id)
 	end
 end
 function VoiceCommandsMod:say_line_thirdperson(id)
+	if (not managers.player or not managers.player:player_unit() or not managers.player:player_unit():sound_source()) then return end
 	managers.player:player_unit():sound_source():set_switch("int_ext", "third")
 	VoiceCommandsMod:say_line(id)
 	--I think this works fine?
