@@ -62,6 +62,42 @@ VoiceCommandsMod.menus.blackcat = {
 	},
 }
 
+--protip: fold/collapse all on this file
+VoiceCommandsMod.menus.mountainmaster = {
+	{
+		text = "Yufu: Death", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_pent_death")
+	},
+	{
+		text = "You can't kill me!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_pent_armorbreak")
+	},
+	{
+		text = "Burn!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_pent_aoe")
+	},
+	{
+		text = "This is your end!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_pent_combat")
+	},
+	{
+		text = "Oh, treacherous rats!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_yuw_pent_threat_04")
+	},
+	{
+		text = "Locke: A car alarm?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_pent_88")
+	},
+	{
+		text = "He has a flamethrower!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_pent_67")
+	},
+	{
+		text = "Take him out already!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_pent_29")
+	},
+}
+
 
 VoiceCommandsMod.menus2.boat = {
 	{
@@ -2525,8 +2561,8 @@ VoiceCommandsMod.menus.diamondheist = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_57")
 	},
 	{
-		text = "Six", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_88")
+		text = "No promises about CFO living", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_93")
 	},
 }
 VoiceCommandsMod.menus.firstworldbank = {
@@ -2680,7 +2716,7 @@ VoiceCommandsMod.menus.hoxtonbreakout2 = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_rb5_hb2_01")
 	},
 	{
-		text = "Bain:Final assault!", stay_open = false, show_text = true,
+		text = "Bain: Final assault!", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_hb2_19")
 	},
 	{
@@ -2774,6 +2810,10 @@ VoiceCommandsMod.menus.theukrainianprisoner = {
 }
 VoiceCommandsMod.menus.goldengrincasino = {
 	{
+		text = "Ouch! You lost", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_134")
+	},
+	{
 		text = "You're on a hot streak!", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_135")
 	},
@@ -2788,10 +2828,6 @@ VoiceCommandsMod.menus.goldengrincasino = {
 	{
 		text = "BFD broke down!", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_62")
-	},
-	{
-		text = "Six", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_130")
 	},
 	{
 		text = "I don't... know...", stay_open = false, show_text = true,
@@ -3526,6 +3562,50 @@ VoiceCommandsMod.menus2.diamondheist = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_cfo_dah_03")
 	},
 	{
+		text = "Bain: The code is...", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_81")
+	},
+	{
+		text = "0", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_82")
+	},
+	{
+		text = "1", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_83")
+	},
+	{
+		text = "2", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_84")
+	},
+	{
+		text = "3", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_85")
+	},
+	{
+		text = "4", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_86")
+	},
+	{
+		text = "5", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_87")
+	},
+	{
+		text = "6", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_88")
+	},
+	{
+		text = "7", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_89")
+	},
+	{
+		text = "8", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_90")
+	},
+	{
+		text = "9", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_dah_91")
+	},
+		{
 		text = "Ralph: Don't shoot!", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_rph_dah_01")
 	},
@@ -3536,18 +3616,6 @@ VoiceCommandsMod.menus2.diamondheist = {
 	{
 		text = "DJ: That's all folks", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_dj_dah_01")
-	},
-	{
-		text = "Male Partier", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_cm1_dah_01")
-	},
-	{
-		text = "Female Partier 1", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_cf1_dah_01")
-	},
-	{
-		text = "Female Partier 2", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_cf2_dah_01")
 	},
 }
 VoiceCommandsMod.menus2.firstworldbank = {
@@ -3651,6 +3719,51 @@ VoiceCommandsMod.menus2.goldengrincasino = {
 		text = "Phone Call 7", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_167")
 	},
+	{
+		text = "The code is...", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_123")
+	},
+	{
+		text = "0", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_124")
+	},
+	{
+		text = "1", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_125")
+	},
+	{
+		text = "2", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_126")
+	},
+	{
+		text = "3", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_127")
+	},
+	{
+		text = "4", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_128")
+	},
+	{
+		text = "5", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_129")
+	},
+	{
+		text = "6", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_130")
+	},
+	{
+		text = "7", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_131")
+	},
+	{
+		text = "8", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_132")
+	},
+	{
+		text = "9", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ca1_133")
+	},
+	
 }
 VoiceCommandsMod.menus2.counterfeit = {
 	{
@@ -3691,6 +3804,7 @@ VoiceCommandsMod.menus2.counterfeit = {
 
 VoiceCommandsMod.predefined1 = {
 	["Black Cat"] = VoiceCommandsMod.menus.blackcat,
+	["Mountain Master"] = VoiceCommandsMod.menus.mountainmaster,
 
 	["Overpass Escape"] = VoiceCommandsMod.menus.escapeoverpass,
 	["Park Escape"] = VoiceCommandsMod.menus.escapepark,
@@ -3858,7 +3972,7 @@ VoiceCommandsMod.predefined2 = {
 	["Watchdogs"] = {twitch, bile},
 	["Boat Load"] = {VoiceCommandsMod.menus2.watchdogs2, ilija}, --also bile even though he isn't the pilot (maybe from day 1 escape?)
 	
-	["Golden Grin Casino"] = {VoiceCommandsMod.menus2.goldengrincasino, bile}, --also ilija
+	["Golden Grin Casino"] = {VoiceCommandsMod.menus2.goldengrincasino}, --also bile and ilija
 	["Hotline Miami"] = {bile, ilija}, --also twitch but 3 menus is ridiculous... and he's not even used
 	["Hoxton Breakout"] = VoiceCommandsMod.menus2.hoxtonbreakout,
 	["Hoxton Revenge"] = bile,

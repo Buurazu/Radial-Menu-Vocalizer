@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "1.7.1"
+	"version" : "1.8"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",
@@ -335,6 +335,15 @@
             "name" : "SFX: Taxman Interrogation",
             "description" : "These lines are so great with Bonnie that I wanted a dedicated 'ARE YOU SOME SORT OF FUCKING MORON' key"
             "script_path" : "SFX/TaxmanInterrogation.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+        },
+	{
+            "keybind_id" : "SFX: Skydiving",
+            "name" : "SFX: Skydiving",
+            "description" : "Requested by a commenter"
+            "script_path" : "SFX/Skydiving.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
 			"localized"   : false,

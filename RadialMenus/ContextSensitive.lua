@@ -2,8 +2,9 @@
 local dialog_conversion = {}
 
 --List of heist names and the dialog bank they're associated with (not needed when custom menus are complete)
---[[
-local dialog_conversion = {
+
+dialog_conversion = {
+	["Mountain Master"] = "l_pent_stage1",
 	["Black Cat"] = "l_chca_stage1",
 	["Cafe Escape"] = { "generic"},
 	--accomplice_boat, driver_1, driver_2, heli_1, sniper
@@ -113,7 +114,7 @@ local dialog_conversion = {
 	["Dirty work"] = "v_peta_stage2",
 	["White Xmas"] = "v_pines_stage1"
 }
-]]
+
 
 local predefined = VoiceCommandsMod.predefined1
 
@@ -134,7 +135,7 @@ local predefined = VoiceCommandsMod.predefined1
 	if (predefined[day_name] or dialog_conversion[day_name]) then job_name = day_name end
 	
 	if (managers.skirmish:is_skirmish()) then job_name = "Holdout" end
-	
+	--predefined = {}
 	if (predefined[job_name]) then VoiceCommandsMod.my_items = predefined[job_name]
 	elseif (dialog_conversion[job_name]) then
 		local dialogs = dialog_conversion[job_name]
