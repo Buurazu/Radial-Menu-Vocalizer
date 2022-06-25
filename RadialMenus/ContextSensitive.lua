@@ -112,7 +112,8 @@ dialog_conversion = {
 	["Nightclub"] = "v_nightclub1_stage1",
 	["Goat Simulator"] = "v_peta_stage1",
 	["Dirty work"] = "v_peta_stage2",
-	["White Xmas"] = "v_pines_stage1"
+	["White Xmas"] = "v_pines_stage1",
+	["Midland Ranch"] = "l_ranc_stage1",
 }
 
 

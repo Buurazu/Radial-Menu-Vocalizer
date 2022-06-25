@@ -3800,6 +3800,41 @@ VoiceCommandsMod.menus2.counterfeit = {
 	},
 }
 
+VoiceCommandsMod.menus.midlandranch = {
+	{
+		text = "Gemma:\nPick it up, yall!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gem_ranc_06")
+	},
+	{
+		text = "Property damage", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gem_ranc_07")
+	},
+	{
+		text = "Locke:\nGet to an access point!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_19")
+	},
+	{
+		text = "Wrong wire!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_28")
+	},
+	{
+		text = "You tripped something!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_33")
+	},
+	{
+		text = "They know we're here!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_44")
+	},
+	{
+		text = "Water tower destruction", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_59")
+	},
+	{
+		text = "Where'd this chop learn to fly?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_ranc_72")
+	},
+}
+
 
 
 VoiceCommandsMod.predefined1 = {
@@ -3918,6 +3953,7 @@ VoiceCommandsMod.predefined1 = {
 	["Buluc's Mansion"] = VoiceCommandsMod.menus.bulucsmansion,
 	["Aftershock"] = VoiceCommandsMod.menus.aftershock,
 	["Stealing Xmas"] = VoiceCommandsMod.menus.stealingxmas,
+	["Midland Ranch"] = VoiceCommandsMod.menus.midlandranch,
 }
 
 local twitch = VoiceCommandsMod.menus2.twitch;
@@ -3990,5 +4026,7 @@ VoiceCommandsMod.predefined2 = {
 	["Santa's Workshop"] = boat,
 	["Stealing Xmas"] = bile,
 	["Dirty work"] = twitch,
+	
+	["Midland Ranch"] = ilija,
 	
 }
