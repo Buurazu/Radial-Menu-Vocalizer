@@ -219,6 +219,11 @@ function VoiceCommandsMod:select_civ(id)
 	VoiceCommandsMod.Save()
 end
 
+function VoiceCommandsMod:select_menu(id)
+	dofile(id)
+	currentkey = nil
+end
+
 VoiceCommandsMod = VoiceCommandsMod or class()
 
 function VoiceCommandsMod:SetMyRadialMenu(menu) --"setter" function
@@ -240,6 +245,7 @@ function VoiceCommandsMod:Refresh(items, id)
 	
 	--find what keypress we should watch for letting go
 	currentkey = self:GetBLTKeybind(id)
+	
 end
 
 function VoiceCommandsMod:GetBLTKeybind(id,...)
@@ -274,6 +280,7 @@ function VoiceCommandsMod:Update(t, dt)
 	if (not VoiceCommandsMod.my_radial_menu:active()) then
 		currentkey = nil
 	end
+	-- Check for our hotkey having been released
 	if (VoiceCommandsMod.my_radial_menu:active() and currentkey ~= nil) then
 		if (self:CheckKeyDown(currentkey) == false) then
 			VoiceCommandsMod.my_radial_menu:mouse_clicked(VoiceCommandsMod.my_radial_menu._base,Idstring("-1"),0,0)

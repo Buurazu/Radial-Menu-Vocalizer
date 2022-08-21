@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "1.9"
+	"version" : "2.0"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",
@@ -61,6 +61,15 @@
 			"localized"   : false,
 	},
 	{
+	    "keybind_id" : "Menu of Menus",
+            "name" : "Menu of Menus",
+            "description" : "Opens a radial menu of all the radial menus; left-click to choose, right-click to exit\nThis keybind doesn't need to be held to keep the menu open"
+            "script_path" : "RadialMenus/MenuOfMenus.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false,
+	},
+	{
             "keybind_id" : "Radial Menu: Greetings",
             "name" : "Radial Menu: Greetings",
             "description" : "(Doesn't work on all heists, especially old Loud-only) Default: Hello\nIncludes: This is a robbery, what a stench, this is the place, search the place"
@@ -107,7 +116,7 @@
         },
 	{
             "keybind_id" : "Radial Menu: Drills",
-            "name" : "Radial Menu: Drills/Computers/Misc.",
+            "name" : "Radial Menu: Drills/Computers",
             "description" : "(More lines for the original 4 + Houston!) Default: Drill's jammed (QC)\nIncludes: Computer's jammed, it's jammed, it's stuck, drill's mounted, drill's done"
             "script_path" : "RadialMenus/Drills.lua",
             "run_in_menu" : false,
