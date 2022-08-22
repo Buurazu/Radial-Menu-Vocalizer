@@ -10,9 +10,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","pln_esc_pep")
 		},
 		{
-			text = "Weathered assault",
+			text = "Crap!",
 			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_ban_b10")
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_sbh_01")
 		},
 		{
 			text = "Stop killing civilians (Delayed)",

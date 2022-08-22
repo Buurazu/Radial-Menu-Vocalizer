@@ -39,6 +39,14 @@ for _,v in ipairs(VoiceCommandsMod._chat_in_order) do
 		VoiceCommandsMod.settings["rmv_chat_toggle_" .. v] = true
 	end
 end
+for k,v in ipairs(BLT.Keybinds._keybinds) do
+	if type(v) == "table" then
+		if v["_mod"].name == "Radial Menu Vocalizer" and v["_name"]:find("Radial Menu") then
+			local add_text = v["_name"]:sub(14)
+			VoiceCommandsMod.settings["rmv_mom_toggle_" .. add_text] = true
+		end
+	end
+end
 VoiceCommandsMod.playing_loops = {}
 
 function VoiceCommandsMod:ResetToDefaultValues()

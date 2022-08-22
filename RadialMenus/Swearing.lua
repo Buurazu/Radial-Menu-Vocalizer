@@ -20,9 +20,9 @@
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","f46x_any")
 		},
 		{
-			text = "Bain: Crap!",
-			stay_open = false, show_text = true,
-            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_sbh_01")
+			text = "Bain!?",
+			stay_open = false, 	show_text = true,
+            callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","v35")
 		},
 		{
 			text = "Taxman Sit",

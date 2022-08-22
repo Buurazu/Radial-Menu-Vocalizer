@@ -36,6 +36,9 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 	rmv_options_menu_2_title = "Toggle Individual Quickchat Messages",
 	rmv_options_menu_2_desc = "If you want to quickchat 'Yes!' but want to spam 'I need a medic bag' with no repercussions, now you can",
 
+	rmv_options_menu_3_title = "Toggle Menus Shown in the Menu of Menus",
+	rmv_options_menu_3_desc = "Disable menus you don't use (like Goat SFX or Megaphone Cop) from being an option in the Menu of Menus",
+
 	rmv_options_send_chat_title = "Quickchat",
 	rmv_options_send_chat_desc = "Sends a chat message on vocalization for informative sounds/responses\n(yes, no, escape's here, no more pagers, 10 second countdown, etc.)",
 	rmv_options_prefix_chat_title = "Prefix Quickchat Messages",
@@ -203,6 +206,7 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 	nodes["rmv_options_menu"] = MenuHelper:BuildMenu( "rmv_options_menu", { back_callback = "VocalizerOptionsSave" } )
 	MenuHelper:AddMenuItem(nodes["blt_options"], "rmv_options_menu", "rmv_options_menu_title", "rmv_options_menu_desc")
 	
+	-- Create the menu for quickchat toggles
 	MenuHelper:NewMenu("rmv_options_menu_2")
 	
 	local current_header = ""
@@ -234,4 +238,32 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 	nodes["rmv_options_menu_2"] = MenuHelper:BuildMenu( "rmv_options_menu_2", { back_callback = "VocalizerOptionsSave" } )
 	
 	MenuHelper:AddMenuItem(nodes["rmv_options_menu"], "rmv_options_menu_2","rmv_options_menu_2_title", "rmv_options_menu_2_desc")
+
+	-- Create the menu for Menu of Menus toggles
+	MenuHelper:NewMenu("rmv_options_menu_3")
+	
+	for k,v in ipairs(BLT.Keybinds._keybinds) do
+		if type(v) == "table" then
+			if v["_mod"].name == "Radial Menu Vocalizer" and v["_name"]:find("Radial Menu") then
+				
+				local add_text = v["_name"]:sub(14)
+				
+				MenuHelper:AddToggle({
+					localized = false,
+					id = "rmv_mom_toggle_" .. add_text,
+					title = add_text,
+					desc = "Toggle this menu appearing as an option in the Menu of Menus",
+					value = VoiceCommandsMod.settings["rmv_mom_toggle_" .. add_text],
+					menu_id = "rmv_options_menu_3",
+					callback = "VocalizerOptionsCheckbox",
+					priority = #BLT.Keybinds._keybinds - k + 10
+				})
+			end
+		end
+	end
+	
+	nodes["rmv_options_menu_3"] = MenuHelper:BuildMenu( "rmv_options_menu_3", { back_callback = "VocalizerOptionsSave" } )
+	
+	MenuHelper:AddMenuItem(nodes["rmv_options_menu"], "rmv_options_menu_3","rmv_options_menu_3_title", "rmv_options_menu_3_desc")
+	
 end)
