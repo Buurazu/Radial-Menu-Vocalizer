@@ -252,7 +252,7 @@ Hooks:Add("MenuManagerBuildCustomMenus", "MenuManagerBuildCustomMenus_RadialMenu
 					localized = false,
 					id = "rmv_mom_toggle_" .. add_text,
 					title = add_text,
-					desc = "Toggle this menu appearing as an option in the Menu of Menus",
+					desc = v["_desc"],
 					value = VoiceCommandsMod.settings["rmv_mom_toggle_" .. add_text],
 					menu_id = "rmv_options_menu_3",
 					callback = "VocalizerOptionsCheckbox",
