@@ -615,12 +615,12 @@ VoiceCommandsMod.menus.artgallery = {
 }
 VoiceCommandsMod.menus.carshop = {
 	{
-		text = "Get the car keys!", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ch1_19")
-	},
-	{
 		text = "Drive! Go go go!", stay_open = false, show_text = true,
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ch1_31")
+	},
+	{
+		text = "Get the car keys!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_ch1_19")
 	},
 	{
 		text = "Nearly got it", stay_open = false, show_text = true,
