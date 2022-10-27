@@ -1467,8 +1467,8 @@ VoiceCommandsMod.menus.thewhitehouse = {
 }
 VoiceCommandsMod.menus.nightclub = {
 	{
-		text = "Escape will be in an alley nearby", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_nightclub_stage1_11")
+		text = "Get that safe open", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_nightclub_stage1_09")
 	},
 	{
 		text = "Enter the club", stay_open = false, show_text = true,
@@ -1479,8 +1479,8 @@ VoiceCommandsMod.menus.nightclub = {
 		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_nightclub_stage1_07")
 	},
 	{
-		text = "Get that safe open", stay_open = false, show_text = true,
-		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_nightclub_stage1_09")
+		text = "Escape will be in an alley nearby", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_pln_nightclub_stage1_11")
 	},
 	{
 		text = "Have you found the key yet?", stay_open = false, show_text = true,
@@ -3835,6 +3835,40 @@ VoiceCommandsMod.menus.midlandranch = {
 	},
 }
 
+VoiceCommandsMod.menus.lostintransit = {
+	{
+		text = "Locke:\nUnscheduled departure", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_27")
+	},
+	{
+		text = "Let me back in", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_04")
+	},
+	{
+		text = "Another RFID box\n(Stealth)", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_23")
+	},
+	{
+		text = "Another RFID box\n(Loud)", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_61")
+	},
+	{
+		text = "Time to go", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_77")
+	},
+	{
+		text = "Ready, set, boom!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_trai_49A")
+	},
+	{
+		text = "Upset Civilian", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_civ_trai_01")
+	},
+	{
+		text = "Gemma:\nReaction to Locke", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gem_trai_04")
+	},
+}
 
 
 VoiceCommandsMod.predefined1 = {
@@ -3868,6 +3902,7 @@ VoiceCommandsMod.predefined1 = {
 	["Transport: Underpass"] = VoiceCommandsMod.menus.transport,
 	["Transport: Train Heist"] = VoiceCommandsMod.menus.trainheist,
 	["Reservoir Dogs Heist"] = VoiceCommandsMod.menus.reservoirdogs1,
+	["Highland Mortuary"] = VoiceCommandsMod.menus.reservoirdogs1,
 	["Garnet Group Boutique"] = VoiceCommandsMod.menus.reservoirdogs2,
 	
 	["Green Bridge"] = VoiceCommandsMod.menus.greenbridge,
@@ -3889,9 +3924,11 @@ VoiceCommandsMod.predefined1 = {
 	["Code for Meth"] = VoiceCommandsMod.menus.rats2,
 	["Bus Stop"] = VoiceCommandsMod.menus.rats3,
 	["Firestarter"] = VoiceCommandsMod.menus.firestarter1,
+	["Airport"] = VoiceCommandsMod.menus.firestarter1,
 	["FBI Server"] = VoiceCommandsMod.menus.firestarter2,
 	["Trustee Bank"] = VoiceCommandsMod.menus.branchbank, --Firestarter 3
 	["Watchdogs"] = VoiceCommandsMod.menus.watchdogs1,
+	["Truck Load"] = VoiceCommandsMod.menus.watchdogs1,
 	["Boat Load"] = VoiceCommandsMod.menus.watchdogs2,
 	
 	["Boiling Point"] = VoiceCommandsMod.menus.boilingpoint,
@@ -3926,6 +3963,7 @@ VoiceCommandsMod.predefined1 = {
 	["The Diamond"] = VoiceCommandsMod.menus.thediamond,
 	["Hoxton Revenge"] = VoiceCommandsMod.menus.hoxtonrevenge,
 	["Hoxton Breakout"] = VoiceCommandsMod.menus.hoxtonbreakout1,
+	["The Breakout"] = VoiceCommandsMod.menus.hoxtonbreakout1,
 	["The Search"] = VoiceCommandsMod.menus.hoxtonbreakout2,
 	["Golden Grin Casino"] = VoiceCommandsMod.menus.goldengrincasino,
 	
@@ -3933,11 +3971,14 @@ VoiceCommandsMod.predefined1 = {
 	["Train Trade"] = VoiceCommandsMod.menus.framingframe2,
 	["Framing"] = VoiceCommandsMod.menus.framingframe3,
 	["Election Day"] = VoiceCommandsMod.menus.electionday1,
+	["Right Track"] = VoiceCommandsMod.menus.electionday1,
 	["Swing Vote"] = VoiceCommandsMod.menus.electionday2,
 	["Breaking Ballot"] = VoiceCommandsMod.menus.electionday3,
 	["Big Oil"] = VoiceCommandsMod.menus.bigoil1,
+	["Club House"] = VoiceCommandsMod.menus.bigoil1,
 	["Engine Problem"] = VoiceCommandsMod.menus.bigoil2,
 	["The Biker Heist"] = VoiceCommandsMod.menus.bikerheist1,
+	["Lion's Den"] = VoiceCommandsMod.menus.bikerheist1,
 	["Interception"] = VoiceCommandsMod.menus.bikerheist2,
 	
 	["Meltdown"] = VoiceCommandsMod.menus.shadowraidmeltdown,
@@ -3954,6 +3995,7 @@ VoiceCommandsMod.predefined1 = {
 	["Aftershock"] = VoiceCommandsMod.menus.aftershock,
 	["Stealing Xmas"] = VoiceCommandsMod.menus.stealingxmas,
 	["Midland Ranch"] = VoiceCommandsMod.menus.midlandranch,
+	["Lost in Transit"] = VoiceCommandsMod.menus.lostintransit,
 }
 
 local twitch = VoiceCommandsMod.menus2.twitch;
@@ -4028,5 +4070,6 @@ VoiceCommandsMod.predefined2 = {
 	["Dirty work"] = twitch,
 	
 	["Midland Ranch"] = ilija,
+	["Lost in Transit"] = ilija,
 	
 }

@@ -114,6 +114,7 @@ dialog_conversion = {
 	["Dirty work"] = "v_peta_stage2",
 	["White Xmas"] = "v_pines_stage1",
 	["Midland Ranch"] = "l_ranc_stage1",
+	["Lost in Transit"] = "l_trai_stage1",
 }
 
 

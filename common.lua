@@ -183,6 +183,7 @@ VoiceCommandsMod._loop_conversion = {
 	Play_npc_tag_poi_01 = { 60, "Stop_npc_tag_poi_01"},
 	Play_mc1_pex_01 = { 30, "Stop_mc1_pex_01" },
 	Play_mc2_pex_01 = { 45, "Stop_mc2_pex_01" },
+	Play_civ_trai_01 = { 45, "Stop_civ_trai_01" },
 }
 
 --this function plays the voiceline that is passed to it as an argument

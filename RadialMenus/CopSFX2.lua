@@ -42,7 +42,7 @@ local coptype = VoiceCommandsMod.settings.cop_selection:sub(3,3)
 			stay_open = false, show_text = true,
             callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line_cop","burnhurt"),
 		})
-		table.insert(VoiceCommandsMod.my_items,
+		table.insert(VoiceCommandsMod.my_items, 1,
 		{
 			text = "Fire Death", 
 			stay_open = false, show_text = true,
