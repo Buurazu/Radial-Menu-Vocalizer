@@ -3870,6 +3870,146 @@ VoiceCommandsMod.menus.lostintransit = {
 	},
 }
 
+VoiceCommandsMod.menus.hostiletakeover = {
+	{
+		text = "Keegan:\nYEEEEEHAW!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_kee_corp_06")
+	},
+	{
+		text = "Keegan Quotes", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","keegan_quote_set_a")
+	},
+	
+	{
+		text = "Locke:\nScientist Intercom", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_corp_30")
+	},
+	{
+		text = "Guard Intercom", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_corp_35")
+	},
+	
+	{
+		text = "Lead Scientist:\nNo, please!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_res_corp_03")
+	},
+	{
+		text = "Marketing Director:\nMy car!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_mar_corp_07")
+	},
+	
+	{
+		text = "Civilian:\nWhat's going on?", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_civ_corp_04")
+	},
+	{
+		text = "Sabotage Phone Call", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_ars_corp")
+	},
+}
+
+VoiceCommandsMod.menus.crudeawakening = {
+	{
+		text = "Gabriel:\nDeath", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gab_deep_15")
+	},
+	{
+		text = "Death By Gas", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gab_deep_6A")
+	},
+	{
+		text = "Battle Cry", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gab_deep_12")
+	},
+	{
+		text = "Phone Call with Locke", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_gab_deep_05")
+	},
+	
+	{
+		text = "Locke:\nGet out of there!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_68")
+	},
+	{
+		text = "Impure sample", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_23")
+	},
+	{
+		text = "Get ziplining!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_77")
+	},
+	{
+		text = "News Report", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_new_deep_01")
+	},
+}
+VoiceCommandsMod.menus2.crudeawakening = {
+	{
+		text = "H1", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_46")
+	},
+	{
+		text = "H1!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_54")
+	},
+	{
+		text = "H2", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_47")
+	},
+	{
+		text = "H2!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_55")
+	},
+	{
+		text = "H3", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_48")
+	},
+	{
+		text = "H3!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_56")
+	},
+	{
+		text = "H4", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_49")
+	},
+	{
+		text = "H4!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_57")
+	},
+	{
+		text = "L1", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_50")
+	},
+	{
+		text = "L1!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_58")
+	},
+	{
+		text = "L2", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_51")
+	},
+	{
+		text = "L2!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_59")
+	},
+	{
+		text = "L3", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_52")
+	},
+	{
+		text = "L3!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_60")
+	},
+	{
+		text = "L4", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_53")
+	},
+	{
+		text = "L4!", stay_open = false, show_text = true,
+		callback = callback(VoiceCommandsMod,VoiceCommandsMod,"say_line","Play_loc_deep_61")
+	},
+}
+
 
 VoiceCommandsMod.predefined1 = {
 	["Black Cat"] = VoiceCommandsMod.menus.blackcat,
@@ -3996,6 +4136,8 @@ VoiceCommandsMod.predefined1 = {
 	["Stealing Xmas"] = VoiceCommandsMod.menus.stealingxmas,
 	["Midland Ranch"] = VoiceCommandsMod.menus.midlandranch,
 	["Lost in Transit"] = VoiceCommandsMod.menus.lostintransit,
+	["Hostile Takeover"] = VoiceCommandsMod.menus.hostiletakeover,
+	["Crude Awakening"] = VoiceCommandsMod.menus.crudeawakening,
 }
 
 local twitch = VoiceCommandsMod.menus2.twitch;
@@ -4071,5 +4213,8 @@ VoiceCommandsMod.predefined2 = {
 	
 	["Midland Ranch"] = ilija,
 	["Lost in Transit"] = ilija,
+	["Hostile Takeover"] = ilija,
+	["Crude Awakening"] = VoiceCommandsMod.menus2.crudeawakening,
+	
 	
 }
