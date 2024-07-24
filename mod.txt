@@ -8,7 +8,7 @@
    Settings loading mostly copied from TdlQ's mods
    SFX IDs from https://docs.google.com/spreadsheets/d/1m0LBg2PKpB-bnWfOFj40AglCI1dLmAHLH3ydi3Y7uz8/edit#gid=2120845746"
 	"contact" : "Discord: Buurazu#8042"
-	"version" : "2.5"
+	"version" : "2.6"
 	"blt_version" : 2,
 	"image" : "buurazu.png",
 	"color" : "0.8 0 0",
@@ -54,344 +54,353 @@
 	{
 	    "keybind_id" : "Stop All Sounds",
             "name" : "Stop All Sounds",
-            "description" : "Good for stopping music or sounds marked with (Loop)"
+            "description" : "Good for stopping music or sounds marked with (Loop)",
             "script_path" : "SFX/StopAllMusic.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
 	},
 	{
 	    "keybind_id" : "Menu of Menus",
             "name" : "Menu of Menus",
-            "description" : "Opens a radial menu of all the radial menus; left-click to choose, right-click to exit\nThis keybind doesn't need to be held to keep the menu open"
+            "description" : "Opens a radial menu of all the radial menus; left-click to choose, right-click to exit\nThis keybind doesn't need to be held to keep the menu open",
             "script_path" : "RadialMenus/MenuOfMenus.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
 	},
 	{
             "keybind_id" : "Radial Menu: Greetings",
             "name" : "Radial Menu: Greetings",
-            "description" : "(Doesn't work on all heists, especially old Loud-only) Default: Hello\nIncludes: This is a robbery, what a stench, this is the place, search the place"
+            "description" : "(Doesn't work on all heists, especially old Loud-only) Default: Hello\nIncludes: This is a robbery, what a stench, this is the place, search the place",
             "script_path" : "RadialMenus/Greetings.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Positive",
             "name" : "Radial Menu: Positive/Revive",
-            "description" : "Default: Thanks (QC)\nIncludes: Fuck yeah, It's PAYDAY, I'm reviving you, Inspire Revive, You're black and white"
+            "description" : "Default: Thanks (QC)\nIncludes: Fuck yeah, It's PAYDAY, I'm reviving you, Inspire Revive, You're black and white",
             "script_path" : "RadialMenus/Positive.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Callouts",
             "name" : "Radial Menu: Callouts",
-            "description" : "(QUICKCHAT ENABLED) Default: Need a Medic Bag\nIncludes: Found Keycard/Crowbar, Placed Medic/Ammo/First Aid Kit/Body Bag Case"
+            "description" : "(QUICKCHAT ENABLED) Default: Need a Medic Bag\nIncludes: Found Keycard/Crowbar, Placed Medic/Ammo/First Aid Kit/Body Bag Case",
             "script_path" : "RadialMenus/Callouts.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Enemy Callouts",
             "name" : "Radial Menu: Enemy Callouts",
-            "description" : "(QUICKCHAT ENABLED) Default: Bulldozer!\nIncludes: All Specials, Turret, Flashbang, Tear Gas"
+            "description" : "(QUICKCHAT ENABLED) Default: Bulldozer!\nIncludes: All Specials, Turret, Flashbang, Tear Gas",
             "script_path" : "RadialMenus/EnemyCallouts.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Swearing",
             "name" : "Radial Menu: Swearing",
-            "description" : "Default: Fuck\nIncludes: Shit, fuck now what, Taxman lines, skydiving, fuck that was loud"
+            "description" : "Default: Fuck\nIncludes: Shit, fuck now what, Taxman lines, skydiving, fuck that was loud",
             "script_path" : "RadialMenus/Swearing.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Drills",
             "name" : "Radial Menu: Drills/Computers",
-            "description" : "(More lines for the original 4 + Houston!) Default: Drill's jammed (QC)\nIncludes: Computer's jammed, it's jammed, it's stuck, drill's mounted, drill's done"
+            "description" : "(More lines for the original 4 + Houston!) Default: Drill's jammed (QC)\nIncludes: Computer's jammed, it's jammed, it's stuck, drill's mounted, drill's done",
             "script_path" : "RadialMenus/Drills.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Directions",
             "name" : "Radial Menu: Directions",
-            "description" : "(QUICKCHAT ENABLED) Default: Follow Me\nIncludes: Right way, wrong way, get inside, Up/Down/Left/Right"
+            "description" : "(QUICKCHAT ENABLED) Default: Follow Me\nIncludes: Right way, wrong way, get inside, Up/Down/Left/Right",
             "script_path" : "RadialMenus/Directions.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: MOVE!",
             "name" : "Radial Menu: MOVE!",
-            "description" : "(QUICKCHAT ENABLED) Default: Inspire Move\nIncludes: Whistle SFX, move the loot, open the door, next objective, found it"
+            "description" : "(QUICKCHAT ENABLED) Default: Inspire Move\nIncludes: Whistle SFX, move the loot, open the door, next objective, found it",
             "script_path" : "RadialMenus/Move.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Time to Go",
             "name" : "Radial Menu: Time to Go",
-            "description" : "(QUICKCHAT ENABLED) Default: Time to Go\nIncludes: Alarm SFX, let's go, we gotta get out"
+            "description" : "(QUICKCHAT ENABLED) Default: Time to Go\nIncludes: Alarm SFX, let's go, we gotta get out",
             "script_path" : "RadialMenus/TimeToGo.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Stealth",
             "name" : "Radial Menu: Stealth",
-            "description" : "Default: Pager Call\nIncludes: Mark Guard, Mark Camera, get down, stay down"
+            "description" : "Default: Pager Call\nIncludes: Mark Guard, Mark Camera, get down, stay down",
             "script_path" : "RadialMenus/Stealth.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Bain: MOVE!",
             "name" : "Radial Menu: Bain: MOVE!",
-            "description" : "(QUICKCHAT ENABLED) Default: MOVE MOVE MOVE!\nIncludes: Clock's ticking, point of no return, escape's here"
+            "description" : "(QUICKCHAT ENABLED) Default: MOVE MOVE MOVE!\nIncludes: Clock's ticking, point of no return, escape's here",
             "script_path" : "RadialMenus/BainMove.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Bain: Yes!",
             "name" : "Radial Menu: Bain: Yes!",
-            "description" : "Default: YES! (QC)\nIncludes: nailing it, great assault, they haven't heard a thing"
+            "description" : "Default: YES! (QC)\nIncludes: nailing it, great assault, they haven't heard a thing",
             "script_path" : "RadialMenus/BainYes.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Bain: No!",
             "name" : "Radial Menu: Bain: No!",
-            "description" : "Default: NO! (QC)\nIncludes: That's the alarm, weathered assault, killed a lot of civilians"
+            "description" : "Default: NO! (QC)\nIncludes: That's the alarm, weathered assault, killed a lot of civilians",
             "script_path" : "RadialMenus/BainNo.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Bain: Pagers",
             "name" : "Radial Menu: Bain: Pagers",
-            "description" : "(QUICKCHAT ENABLED) Default: Pick up the pager\nIncludes: That's one through four, two more, one more, no more pagers"
+            "description" : "(QUICKCHAT ENABLED) Default: Pick up the pager\nIncludes: That's one through four, two more, one more, no more pagers",
             "script_path" : "RadialMenus/BainPagers.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "SFX: The Thermal Drill",
             "name" : "Radial Menu: Heist-Specific",
-            "description" : "Heist-specific audio, mostly from Bain/Locke\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, Answer the phone, Fannies!"
+            "description" : "Heist-specific audio, mostly from Bain/Locke\nDefaults include: Guys The Thermal Drill, 10 seconds/Run/Escape!, Lab Explosion, Answer the phone, Fannies!",
             "script_path" : "RadialMenus/ContextSensitive.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
 	    "keybind_id" : "SFX: Bile Death",
             "name" : "Radial Menu: Heist-Specific 2",
-            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat, Ilija, Pyro, Phone Calls, Buluc, The Dentist, Nurse, Taxman, Matt, Ernesto, CFO"
+            "description" : "Additional heist-specific audio for some heists, mostly accomplices and one-off characters\nIncludes: Bile, Twitch, Boat, Ilija, Pyro, Phone Calls, Buluc, The Dentist, Nurse, Taxman, Matt, Ernesto, CFO",
             "script_path" : "RadialMenus/ContextSensitive2.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
 	},
 	{
             "keybind_id" : "Radial Menu: Alarm SFX",
             "name" : "Radial Menu: Alarm SFX",
-            "description" : "Default: The Bomb (QC)\nIncludes: Shadow Raid, Jewelry, 10 second countdown (QC)"
+            "description" : "Default: The Bomb (QC)\nIncludes: Shadow Raid, Jewelry, 10 second countdown (QC)",
             "script_path" : "RadialMenus/Alarms.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Options: Cop Selection",
             "name" : "Options: Cop Selection",
-            "description" : "Choose what type of cop to use for Cop SFX (Default: Guard 2-3)"
+            "description" : "Choose what type of cop to use for Cop SFX (Default: Guard 2-3)",
             "script_path" : "RadialMenus/CopSelector.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Options: Cop Selection (Russian/Mexican)",
             "name" : "Options: Cop Selection (Russian/Mexican)",
-            "description" : "Extra cop selection menu for Russian and Mexican cops\n(only works on heists where they are loaded)"
+            "description" : "Extra cop selection menu for Russian and Mexican cops\n(only works on heists where they are loaded)",
             "script_path" : "RadialMenus/CopSelector2.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Cop SFX",
             "name" : "Radial Menu: Cop SFX",
-            "description" : "Default: Area clear\nIncludes: This ends now, go go go, signs of intruders, disable their drill"
+            "description" : "Default: Area clear\nIncludes: This ends now, go go go, signs of intruders, disable their drill",
             "script_path" : "RadialMenus/CopSFX.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Cop SFX: Pain",
             "name" : "Radial Menu: Cop SFX: Pain",
-            "description" : "Default: Death\nIncludes: He has a saw, Joker conversion, christ almighty, on fire, fire death"
+            "description" : "Default: Death\nIncludes: He has a saw, Joker conversion, christ almighty, on fire, fire death",
             "script_path" : "RadialMenus/CopSFX2.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Options: Civ Selection",
             "name" : "Options: Civ Selection",
-            "description" : "Choose what type of civ to use for Civ SFX (Default: Male 1)"
+            "description" : "Choose what type of civ to use for Civ SFX (Default: Male 1)",
             "script_path" : "RadialMenus/CivSelector.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Civ SFX",
             "name" : "Radial Menu: Civ SFX",
-            "description" : "Default: Scream 1\nIncludes: Scream 2/3, on fire, fire death, old Stockholm Syndrome, 911 call"
+            "description" : "Default: Scream 1\nIncludes: Scream 2/3, on fire, fire death, old Stockholm Syndrome, 911 call",
             "script_path" : "RadialMenus/CivSFX.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Specials Entrance",
             "name" : "Radial Menu: Specials Entrance",
-            "description" : "Default: Captain Entrance\nIncludes: Bulldozer, Medic, Turret, Taser, Cloaker"
+            "description" : "Default: Captain Entrance\nIncludes: Bulldozer, Medic, Turret, Taser, Cloaker",
             "script_path" : "RadialMenus/SpecialsEntrance.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Specials Actions",
             "name" : "Radial Menu: Specials Actions",
-            "description" : "Default: Cloaker Chase\nIncludes: Various Special Taunts/Noises"
+            "description" : "Default: Cloaker Chase\nIncludes: Various Special Taunts/Noises",
             "script_path" : "RadialMenus/SpecialsActions.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Cloaker SFX",
             "name" : "Radial Menu: Cloaker SFX",
-            "description" : "Default: Cloaker Kick Impact + Fall\nIncludes: SFX, Death, Taunt"
+            "description" : "Default: Cloaker Kick Impact + Fall\nIncludes: SFX, Death, Taunt",
             "script_path" : "RadialMenus/CloakerSFX.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Christmas",
             "name" : "Radial Menu: Christmas",
-            "description" : "Default: HO HO HO!\nIncludes: Christmas Cloaker Chase, Xmas Music"
+            "description" : "Default: HO HO HO!\nIncludes: Christmas Cloaker Chase, Xmas Music",
             "script_path" : "RadialMenus/Christmas.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Goat SFX",
             "name" : "Radial Menu: Goat SFX",
-            "description" : "Default: Baaaa\nIncludes: Headbutt, kick, sleeping (loop), lick (loop), jump on car (loop)"
+            "description" : "Default: Baaaa\nIncludes: Headbutt, kick, sleeping (loop), lick (loop), jump on car (loop)",
             "script_path" : "RadialMenus/GoatSFX.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Megaphone Cop",
             "name" : "Radial Menu: Megaphone Cop",
-            "description" : "This seemed like a good idea but he's too quiet"
+            "description" : "This seemed like a good idea but he's too quiet",
             "script_path" : "RadialMenus/MegaphoneCop.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "Radial Menu: Music",
             "name" : "Radial Menu: Music",
-            "description" : "NOTE: Music tends to act weird and gets stopped easily, especially in loud\nDefault: I Will Give You My All"
+            "description" : "NOTE: Music tends to act weird and gets stopped easily, especially in loud\nDefault: I Will Give You My All",
             "script_path" : "RadialMenus/Music.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "SFX: Taxman Interrogation",
             "name" : "SFX: Taxman Interrogation",
-            "description" : "These lines are so great with Bonnie that I wanted a dedicated 'ARE YOU SOME SORT OF FUCKING MORON' key"
+            "description" : "These lines are so great with Bonnie that I wanted a dedicated 'ARE YOU SOME SORT OF FUCKING MORON' key",
             "script_path" : "SFX/TaxmanInterrogation.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "SFX: Skydiving",
             "name" : "SFX: Skydiving",
-            "description" : "Requested by a commenter"
+            "description" : "Requested by a commenter",
             "script_path" : "SFX/Skydiving.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
             "keybind_id" : "SFX: Move The Loot",
             "name" : "SFX: Move The Loot",
-            "description" : "(Quickchat Enabled) Shift that stuff ya bastards"
+            "description" : "(Quickchat Enabled) Shift that stuff ya bastards",
             "script_path" : "SFX/MoveTheLoot.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
         },
 	{
 	    "keybind_id" : "SFX: Whistle",
             "name" : "SFX: Whistle",
-            "description" : "(Quickchat Enabled) Grab attention with this"
+            "description" : "(Quickchat Enabled) Grab attention with this",
             "script_path" : "SFX/Whistle.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
 	},
 	{
 	    "keybind_id" : "SFX: Open The Door",
             "name" : "SFX: Open The Door",
-            "description" : "(Quickchat Enabled) Get that fucking door open now"
+            "description" : "(Quickchat Enabled) Get that fucking door open now",
             "script_path" : "SFX/OpenTheDoor.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
 	},
 	{
 	    "keybind_id" : "SFX: Shield",
             "name" : "SFX: Shield",
-            "description" : "Shield knocking SFX, requested in comments"
+            "description" : "Shield knocking SFX, requested in comments",
             "script_path" : "SFX/Shield.lua",
             "run_in_menu" : false,
             "run_in_game" : true,
-			"localized"   : false,
+			"localized"   : false
+	},
+	{
+	    "keybind_id" : "SFX: Baaaa",
+            "name" : "SFX: Baaaa",
+            "description" : "Goat baaa sfx, requested in comments",
+            "script_path" : "SFX/Baaaa.lua",
+            "run_in_menu" : false,
+            "run_in_game" : true,
+			"localized"   : false
 	}
     ]
 }
