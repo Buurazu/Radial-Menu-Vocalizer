@@ -47,37 +47,37 @@ DB:create_entry(
 	ModPath .. 'assets/hud_shield.texture'
 )
 
-RadialMouseMenu = RadialMouseMenu or class()
-RadialMouseMenu.MOUSE_ID = "radial_menu_mouse"
-RadialMouseMenu.queued_items = {}
+RMVRadialMouseMenu = RMVRadialMouseMenu or class()
+RMVRadialMouseMenu.MOUSE_ID = "radial_menu_mouse"
+RMVRadialMouseMenu.queued_items = {}
 
-function RadialMouseMenu.CreateQueuedMenus()
-	for i=#RadialMouseMenu.queued_items,1,-1 do
-		local data = table.remove(RadialMouseMenu.queued_items,i)
-		local result = RadialMouseMenu:new(data.params,data.callback)
+function RMVRadialMouseMenu.CreateQueuedMenus()
+	for i=#RMVRadialMouseMenu.queued_items,1,-1 do
+		local data = table.remove(RMVRadialMouseMenu.queued_items,i)
+		local result = RMVRadialMouseMenu:new(data.params,data.callback)
 --		if result and (type(data.callback) == "function") then 
 --			data.callback(result)
 --		end
 	end
 end
 
-function RadialMouseMenu:init(params,callback) --create new instance of a radial selection menu; called from new()
+function RMVRadialMouseMenu:init(params,callback) --create new instance of a radial selection menu; called from new()
 	if not managers.gui_data then 
-		table.insert(RadialMouseMenu.queued_items,1,{callback = callback,params = params})
-		--if RadialMouseMenu:new() is called after RMM loads but before the rest of the game,
+		table.insert(RMVRadialMouseMenu.queued_items,1,{callback = callback,params = params})
+		--if RMVRadialMouseMenu:new() is called after RMM loads but before the rest of the game,
 		--save the information for later and create it on game load
 		return
 	end
 
-	RadialMouseMenu._WS = RadialMouseMenu._WS or managers.gui_data:create_fullscreen_workspace() --create classwide workspace if it doesn't already exist
+	RMVRadialMouseMenu._WS = RMVRadialMouseMenu._WS or managers.gui_data:create_fullscreen_workspace() --create classwide workspace if it doesn't already exist
 	
-	local base = RadialMouseMenu._WS:panel()
+	local base = RMVRadialMouseMenu._WS:panel()
 
 	self._base = base
 	params = params or {}
 	local name = params.name --radial name; used for labelling hud elements
 	if not name then 
-		local error_msg = "ERROR: RadialMouseMenu:init(): You must supply a valid name! Please see documentation at https://github.com/offyerrocker/RadialMouseMenu/wiki"
+		local error_msg = "ERROR: RMVRadialMouseMenu:init(): You must supply a valid name! Please see documentation at https://github.com/offyerrocker/RMVRadialMouseMenu/wiki"
 		if Console then 
 			Console:Log(error_msg,{color = Color.red})
 		else
@@ -131,7 +131,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	self._center_font_size = params.center_font_size
 	self._font_size = params.font_size
 		
-	self._hud = base:panel({ --master panel for this instance of RadialMouseMenu
+	self._hud = base:panel({ --master panel for this instance of RMVRadialMouseMenu
 		name = self._name,
 		layer = 1,
 		visible = false,
@@ -235,7 +235,7 @@ function RadialMouseMenu:init(params,callback) --create new instance of a radial
 	return self
 end
 
-function RadialMouseMenu:mouse_moved(o,mouse_x,mouse_y)
+function RMVRadialMouseMenu:mouse_moved(o,mouse_x,mouse_y)
 	local offset_x = self._hud:w() / 2
 	local offset_y = self._hud:h() / 2
 	mouse_x = (mouse_x - (self._hud:x() + offset_x))
@@ -300,7 +300,7 @@ function RadialMouseMenu:mouse_moved(o,mouse_x,mouse_y)
 	self._arrow:set_rotation(mouse_angle)
 end
 
-function RadialMouseMenu:mouse_clicked(o,button,x,y)
+function RMVRadialMouseMenu:mouse_clicked(o,button,x,y)
 	if button == Idstring("1") then
 		self:Hide(nil,false)
 		return
@@ -325,7 +325,7 @@ function RadialMouseMenu:mouse_clicked(o,button,x,y)
 	end
 end
 
-function RadialMouseMenu:on_item_clicked(item,skip_hide)
+function RMVRadialMouseMenu:on_item_clicked(item,skip_hide)
 --	item._body:set_visible(not item._body:visible())
 	local success,result
 	if not (item.stay_open or skip_hide) then 
@@ -338,7 +338,7 @@ function RadialMouseMenu:on_item_clicked(item,skip_hide)
 end
 
 
-function RadialMouseMenu:on_mouseover_item(index) --you can choose to clone the class and change the mousover event animation if you want
+function RMVRadialMouseMenu:on_mouseover_item(index) --you can choose to clone the class and change the mousover event animation if you want
 	local item = self:get_item(index)
 	if not item then 
 		self._selected = false
@@ -373,7 +373,7 @@ function RadialMouseMenu:on_mouseover_item(index) --you can choose to clone the 
 
 end
 
-function RadialMouseMenu:Toggle(state,...)
+function RMVRadialMouseMenu:Toggle(state,...)
 	if state == nil then 
 		state = not self:active()
 	end	
@@ -385,22 +385,22 @@ function RadialMouseMenu:Toggle(state,...)
 	end
 end
 
-function RadialMouseMenu:Show()
+function RMVRadialMouseMenu:Show()
 	if not self._init_items_done then 
 		self:populate_items()
 		self._init_items_done = true
 	end
 	
-	if RadialMouseMenu.current_menu and RadialMouseMenu._name ~= self:get_name() then 
-		RadialMouseMenu.current_menu:Hide(true) --hide any other active radial menus, since only one can take input at a time
+	if RMVRadialMouseMenu.current_menu and RMVRadialMouseMenu._name ~= self:get_name() then 
+		RMVRadialMouseMenu.current_menu:Hide(true) --hide any other active radial menus, since only one can take input at a time
 	end
-	RadialMouseMenu.current_menu = self
+	RMVRadialMouseMenu.current_menu = self
 
 	self._hud:show()
 	local data = {
 		mouse_move = callback(self, self, "mouse_moved"),
 		mouse_click = callback(self, self, "mouse_clicked"),
-		id =  RadialMouseMenu.MOUSE_ID
+		id =  RMVRadialMouseMenu.MOUSE_ID
 	}
 	if not self._active then 
 		managers.mouse_pointer:use_mouse(data)
@@ -421,20 +421,20 @@ function RadialMouseMenu:Show()
 	self._selector:set_visible(false)
 end
 
-function RadialMouseMenu:get_name()
+function RMVRadialMouseMenu:get_name()
 	return self._name
 end
 
-function RadialMouseMenu:active() --whether or not this menu instance is visible and interactable
+function RMVRadialMouseMenu:active() --whether or not this menu instance is visible and interactable
 	return self._active
 end
 
-function RadialMouseMenu:Hide(skip_reset,do_success_cb)
+function RMVRadialMouseMenu:Hide(skip_reset,do_success_cb)
 	if not skip_reset then 
-		RadialMouseMenu.current_menu = nil
+		RMVRadialMouseMenu.current_menu = nil
 	end
 	self._hud:hide()
---	RadialMouseMenu._WS:disconnect_keyboard()
+--	RMVRadialMouseMenu._WS:disconnect_keyboard()
 	if self.block_all_input then 
 		game_state_machine:_set_controller_enabled(true)
 	end
@@ -448,7 +448,7 @@ function RadialMouseMenu:Hide(skip_reset,do_success_cb)
 			player:movement():current_state()._menu_closed_fire_cooldown = player:movement():current_state()._menu_closed_fire_cooldown + 0.01
 		end
 		self:on_closed()
-		managers.mouse_pointer:remove_mouse(RadialMouseMenu.MOUSE_ID)
+		managers.mouse_pointer:remove_mouse(RMVRadialMouseMenu.MOUSE_ID)
 		if do_success_cb then 
 			if item then 
 				self:on_item_clicked(item,true) --already hiding here so skip_hide 
@@ -464,12 +464,12 @@ end
 	- Lua's garbage collection should clear the object from memory automatically
 --]]
 
-function RadialMouseMenu:pre_destroy()
+function RMVRadialMouseMenu:pre_destroy()
 	self._base:remove(self._hud)
 	--self = nil
 end
 
-function RadialMouseMenu:create_item(data,skip_refresh) --the slightly easier way to auto-generate an item
+function RMVRadialMouseMenu:create_item(data,skip_refresh) --the slightly easier way to auto-generate an item
 --creates item data if you want to customize an item,
 --but want to only change some things,
 --and want to use auto-created default values for everything else
@@ -519,7 +519,7 @@ function RadialMouseMenu:create_item(data,skip_refresh) --the slightly easier wa
 	return item
 end
 
-function RadialMouseMenu:add_item(item,skip_refresh)
+function RMVRadialMouseMenu:add_item(item,skip_refresh)
 	table.insert(self._items,item)
 	if not skip_refresh then 
 		--skip_refresh should be used if you are adding multiple items at a time 
@@ -528,15 +528,15 @@ function RadialMouseMenu:add_item(item,skip_refresh)
 	end
 end
 
-function RadialMouseMenu:get_item(index)
+function RMVRadialMouseMenu:get_item(index)
 	return self._items[index]
 end
 
-function RadialMouseMenu:get_all_items()
+function RMVRadialMouseMenu:get_all_items()
 	return self._items
 end
 
-function RadialMouseMenu:reset_items(skip_refresh) --removes panels from items, but keeps original data
+function RMVRadialMouseMenu:reset_items(skip_refresh) --removes panels from items, but keeps original data
 	for k,data in ipairs(self._items) do 
 		if data._panel and alive(data._panel) then 
 			self._hud:remove(data._panel)
@@ -550,16 +550,16 @@ function RadialMouseMenu:reset_items(skip_refresh) --removes panels from items, 
 	end
 end
 
-function RadialMouseMenu:on_closed()
+function RMVRadialMouseMenu:on_closed()
 	Hooks:Call("radialmenu_released_" .. self:get_name(),self._selected)
 end
 
-function RadialMouseMenu:clear_items() --removes ALL ITEM DATA
+function RMVRadialMouseMenu:clear_items() --removes ALL ITEM DATA
 	self:reset_items(true)
 	self._items = {}
 end
 
-function RadialMouseMenu:remove_item(index,skip_refresh) --removes a particular item entry
+function RMVRadialMouseMenu:remove_item(index,skip_refresh) --removes a particular item entry
 	local item = self._items[index]
 	if item then 
 		if item._panel and alive(item._panel) then 
@@ -576,7 +576,7 @@ function RadialMouseMenu:remove_item(index,skip_refresh) --removes a particular 
 	end
 end
 
-function RadialMouseMenu:populate_items()
+function RMVRadialMouseMenu:populate_items()
 	self:reset_items(true) --tell reset_items() not to call populate_items()
 	--stacks are not chief among the things i like to overflow
 	
@@ -654,6 +654,6 @@ function RadialMouseMenu:populate_items()
 	self._init_items_done = true
 end
 
-local initialize = RadialMouseMenu:new({name = "VoiceCommandsMenu"})
+local initialize = RMVRadialMouseMenu:new({name = "VoiceCommandsMenu"})
 
-Hooks:Add("BaseNetworkSessionOnLoadComplete","radialmousemenu_onloaded",RadialMouseMenu.CreateQueuedMenus)
+Hooks:Add("BaseNetworkSessionOnLoadComplete","radialmousemenu_onloaded",RMVRadialMouseMenu.CreateQueuedMenus)

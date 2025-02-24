@@ -331,5 +331,5 @@ function VoiceCommandsMod:CreateTheMenu()
 		center_font_size = VoiceCommandsMod.settings.radial_menu_center_font_size,
 	}
 
-	VoiceCommandsMod.my_radial_menu = RadialMouseMenu:new(params,callback(VoiceCommandsMod,VoiceCommandsMod,"SetMyRadialMenu"))
+	VoiceCommandsMod.my_radial_menu = RMVRadialMouseMenu:new(params,callback(VoiceCommandsMod,VoiceCommandsMod,"SetMyRadialMenu"))
 end

@@ -2,8 +2,8 @@
 local orig_check_actions = PlayerMaskOff._update_check_actions
 function PlayerMaskOff:_update_check_actions(t, dt,...)
 
-	if RadialMouseMenu and RadialMouseMenu.current_menu then
-		local current_menu = RadialMouseMenu.current_menu
+	if RMVRadialMouseMenu and RMVRadialMouseMenu.current_menu then
+		local current_menu = RMVRadialMouseMenu.current_menu
 		if not current_menu.allow_keyboard_input and current_menu:active() then
 		else
 			return orig_check_actions(self,t,dt,...)
